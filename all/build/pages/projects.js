@@ -43,10 +43,38 @@ function normalizeId(value, filename) {
 }
 
 function formatDate(value) {
-    const source = String(value || '').trim();
+    if (!value) {
+        return '未填写';
+    }
+
+    if (value instanceof Date && !Number.isNaN(value.getTime())) {
+        const year = value.getUTCFullYear();
+        const month = String(value.getUTCMonth() + 1).padStart(2, '0');
+        const day = String(value.getUTCDate()).padStart(2, '0');
+
+        return `${year}-${month}-${day}`;
+    }
+
+    const source = String(value).trim();
 
     if (!source) {
         return '未填写';
+    }
+
+    const dateOnlyMatch = source.match(/^(\d{4}-\d{2}-\d{2})/);
+
+    if (dateOnlyMatch) {
+        return dateOnlyMatch[1];
+    }
+
+    const parsedDate = new Date(source);
+
+    if (!Number.isNaN(parsedDate.getTime())) {
+        const year = parsedDate.getUTCFullYear();
+        const month = String(parsedDate.getUTCMonth() + 1).padStart(2, '0');
+        const day = String(parsedDate.getUTCDate()).padStart(2, '0');
+
+        return `${year}-${month}-${day}`;
     }
 
     return source;
