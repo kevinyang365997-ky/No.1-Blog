@@ -55,6 +55,7 @@ const DIRS = {
     assets: path.join(__dirname, 'src', 'assets'),
     shared: path.join(__dirname, 'shared'),
     images: path.join(__dirname, 'image'),
+    files: path.join(__dirname, 'files'),
     output: path.join(__dirname, 'dist'),
     templates: path.join(__dirname, 'src'),
     partials: path.join(__dirname, 'src', 'partials'),
@@ -336,6 +337,7 @@ console.log('📦 Moving assets and configs...');
 if (fs.existsSync(DIRS.assets)) copyDir(DIRS.assets, path.join(DIRS.output, 'assets'), { ignore: ['posts'] });
 if (fs.existsSync(DIRS.shared)) copyDir(DIRS.shared, path.join(DIRS.output, 'assets'));
 if (fs.existsSync(DIRS.images)) copyDir(DIRS.images, path.join(DIRS.output, 'image'));
+if (fs.existsSync(DIRS.files)) copyDir(DIRS.files, path.join(DIRS.output, 'files'));
 
 // ===== 6.6 生成 JS bundle（CSS bundle 需等 Tailwind 编译完成，见第 8 步之后）=====
 console.log('🧩 Writing JS bundles...');
