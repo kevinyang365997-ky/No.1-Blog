@@ -42,6 +42,7 @@ const allPage = require('./build/pages/all.js');
 const searchPage = require('./build/pages/search.js');
 const aboutPage = require('./build/pages/about.js');
 const resumePage = require('./build/pages/resume.js');
+const projectsPage = require('./build/pages/projects.js');
 const notFoundPage = require('./build/pages/notfound.js');
 const shellPage = require('./build/pages/shell.js');
 const { generateSitemap, generateRobotsTxt, generateLlmsTxt, generateFeed, generateOpenSearchXml } = require('./build/pages/sitemap.js');
@@ -58,8 +59,9 @@ const DIRS = {
     templates: path.join(__dirname, 'src'),
     partials: path.join(__dirname, 'src', 'partials'),
        build: path.join(__dirname, 'build'),
-    control: path.join(__dirname, '..', 'Control'),
-    resume: path.join(__dirname, '..', 'resume')
+  control: path.join(__dirname, '..', 'Control'),
+resume: path.join(__dirname, '..', 'resume'),
+projects: path.join(__dirname, '..', 'projects')
 };
 
 // ===== 2. 加载 git dates =====
@@ -225,6 +227,8 @@ const tplIndexAll = engine.loadTemplate('template_index_all.html');
 const tplSearch = engine.loadTemplate('template_index_search.html');
 const tplAbout = engine.loadTemplate('template_index_About.html');
 const tplResume = engine.loadTemplate('template_resume.html');
+const tplProjects = engine.loadTemplate('template_projects.html');
+const tplProject = engine.loadTemplate('template_project.html');
 const tplNotFound = engine.loadTemplate('template_index_404.html');
 const tplShell = engine.loadTemplate('template_shell.html');
 
@@ -302,6 +306,15 @@ resumePage.generate({
     siteConfig,
     seoConfig,
     resumePath: path.join(DIRS.resume, 'profile.md'),
+    outputDir: DIRS.output
+});
+
+projectsPage.generate({
+    projectsDir: DIRS.projects,
+    listTemplate: tplProjects,
+    detailTemplate: tplProject,
+    siteConfig,
+    seoConfig,
     outputDir: DIRS.output
 });
 
