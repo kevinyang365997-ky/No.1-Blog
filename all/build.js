@@ -41,6 +41,7 @@ const indexPage = require('./build/pages/index.js');
 const allPage = require('./build/pages/all.js');
 const searchPage = require('./build/pages/search.js');
 const aboutPage = require('./build/pages/about.js');
+const resumePage = require('./build/pages/resume.js');
 const notFoundPage = require('./build/pages/notfound.js');
 const shellPage = require('./build/pages/shell.js');
 const { generateSitemap, generateRobotsTxt, generateLlmsTxt, generateFeed, generateOpenSearchXml } = require('./build/pages/sitemap.js');
@@ -56,8 +57,9 @@ const DIRS = {
     output: path.join(__dirname, 'dist'),
     templates: path.join(__dirname, 'src'),
     partials: path.join(__dirname, 'src', 'partials'),
-    build: path.join(__dirname, 'build'),
-    control: path.join(__dirname, '..', 'Control')
+       build: path.join(__dirname, 'build'),
+    control: path.join(__dirname, '..', 'Control'),
+    resume: path.join(__dirname, '..', 'resume')
 };
 
 // ===== 2. 加载 git dates =====
@@ -222,6 +224,7 @@ const tplPost = engine.loadTemplate('template_post.html');
 const tplIndexAll = engine.loadTemplate('template_index_all.html');
 const tplSearch = engine.loadTemplate('template_index_search.html');
 const tplAbout = engine.loadTemplate('template_index_About.html');
+const tplResume = engine.loadTemplate('template_resume.html');
 const tplNotFound = engine.loadTemplate('template_index_404.html');
 const tplShell = engine.loadTemplate('template_shell.html');
 
@@ -277,9 +280,35 @@ indexPage.generateAll({ posts: allPosts, template: tplIndex, postsPerPage: POSTS
 // 外壳输出到 /shell（noindex），真人浏览器在内容页上由 bootstrap 换壳启用顶栏音频无缝体验。
 shellPage.generate({ template: tplShell, siteConfig, seoConfig, outputDir: DIRS.output });
 allPage.generate({ posts: allPosts, template: tplIndexAll, siteConfig, seoConfig, outputDir: DIRS.output });
-searchPage.generate({ posts: allPosts, template: tplSearch, siteConfig, seoConfig, outputDir: DIRS.output, recentPostsSidebarHtml: recentPostsSidebarHomeWrapperHtml });
-aboutPage.generate({ template: tplAbout, siteConfig, seoConfig, aboutConfig, outputDir: DIRS.output });
-notFoundPage.generateNotFoundPage({ template: tplNotFound, outputDir: DIRS.output });
+searchPage.generate({
+    posts: allPosts,
+    template: tplSearch,
+    siteConfig,
+    seoConfig,
+    outputDir: DIRS.output,
+    recentPostsSidebarHtml: recentPostsSidebarHomeWrapperHtml
+});
+
+aboutPage.generate({
+    template: tplAbout,
+    siteConfig,
+    seoConfig,
+    aboutConfig,
+    outputDir: DIRS.output
+});
+
+resumePage.generate({
+    template: tplResume,
+    siteConfig,
+    seoConfig,
+    resumePath: path.join(DIRS.resume, 'profile.md'),
+    outputDir: DIRS.output
+});
+
+notFoundPage.generateNotFoundPage({
+    template: tplNotFound,
+    outputDir: DIRS.output
+});
 generateSitemap({ posts: allPosts, siteConfig, seoConfig, outputDir: DIRS.output });
 generateRobotsTxt({ siteConfig, seoConfig, outputDir: DIRS.output });
 generateLlmsTxt({ posts: allPosts, siteConfig, seoConfig, outputDir: DIRS.output });
