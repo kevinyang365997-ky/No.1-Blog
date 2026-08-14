@@ -44,6 +44,7 @@ const aboutPage = require('./build/pages/about.js');
 const resumePage = require('./build/pages/resume.js');
 const projectsPage = require('./build/pages/projects.js');
 const videosPage = require('./build/pages/videos.js');
+const galleryPage = require('./build/pages/gallery.js');
 const notFoundPage = require('./build/pages/notfound.js');
 const shellPage = require('./build/pages/shell.js');
 const { generateSitemap, generateRobotsTxt, generateLlmsTxt, generateFeed, generateOpenSearchXml } = require('./build/pages/sitemap.js');
@@ -64,7 +65,8 @@ const DIRS = {
   control: path.join(__dirname, '..', 'Control'),
 resume: path.join(__dirname, '..', 'resume'),
 projects: path.join(__dirname, '..', 'projects'),
-videos: path.join(__dirname, '..', 'videos')
+videos: path.join(__dirname, '..', 'videos'),
+gallery: path.join(__dirname, '..', 'gallery')
 };
 
 // ===== 2. 加载 git dates =====
@@ -234,6 +236,8 @@ const tplProjects = engine.loadTemplate('template_projects.html');
 const tplProject = engine.loadTemplate('template_project.html');
 const tplVideos = engine.loadTemplate('template_videos.html');
 const tplVideo = engine.loadTemplate('template_video.html');
+const tplGallery = engine.loadTemplate('template_gallery.html');
+const tplGalleryItem = engine.loadTemplate('template_gallery_item.html');
 const tplNotFound = engine.loadTemplate('template_index_404.html');
 const tplShell = engine.loadTemplate('template_shell.html');
 
@@ -327,6 +331,15 @@ videosPage.generate({
     videosDir: DIRS.videos,
     listTemplate: tplVideos,
     detailTemplate: tplVideo,
+    siteConfig,
+    seoConfig,
+    outputDir: DIRS.output
+});
+
+galleryPage.generate({
+    galleryDir: DIRS.gallery,
+    listTemplate: tplGallery,
+    detailTemplate: tplGalleryItem,
     siteConfig,
     seoConfig,
     outputDir: DIRS.output
