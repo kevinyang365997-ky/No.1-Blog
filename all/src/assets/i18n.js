@@ -250,25 +250,21 @@
     }
 
     function applyDirection(languageCode) {
-        /*
-         * 当前只有公共导航完成翻译，正文仍可能是中文。
-         * 所以暂时不对整个网站启用 RTL 镜像布局。
-         */
-        document.documentElement.lang =
-            languageCode;
+    document.documentElement.lang =
+        languageCode;
 
-        document.documentElement.setAttribute(
-            'dir',
-            'ltr'
+    document.documentElement.setAttribute(
+        'dir',
+        'ltr'
+    );
+
+    if (document.body) {
+        document.body.removeAttribute('dir');
+        document.body.classList.remove(
+            'freecat-rtl'
         );
-
-        if (document.body) {
-            document.body.removeAttribute('dir');
-            document.body.classList.remove(
-                'freecat-rtl'
-            );
-        }
-
+    }
+}
         /*
          * 只让明确标记为阿拉伯语的文字使用 RTL，
          * 不改变 Logo、导航、侧栏及正文的位置。
