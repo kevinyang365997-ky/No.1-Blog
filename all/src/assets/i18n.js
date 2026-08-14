@@ -1,4 +1,6 @@
 (() => {
+    'use strict';
+
     const STORAGE_KEY = 'freecat-language';
     const DEFAULT_LANGUAGE = 'zh-CN';
 
@@ -196,28 +198,58 @@
 
     function getSavedLanguage() {
         try {
-            return (
-                localStorage.getItem(STORAGE_KEY) ||
-                DEFAULT_LANGUAGE
-            );
+            const savedLanguage =
+                localStorage.getItem(STORAGE_KEY);
+
+            if (
+                savedLanguage &&
+                translations[savedLanguage]
+            ) {
+                return savedLanguage;
+            }
+
+            return DEFAULT_LANGUAGE;
         } catch (error) {
             return DEFAULT_LANGUAGE;
         }
     }
 
+    function saveLanguage(languageCode) {
+        try {
+            localStorage.setItem(
+                STORAGE_KEY,
+                languageCode
+            );
+        } catch (error) {
+            /*
+             * 某些浏览器可能禁止本地存储。
+             * 即使保存失败，本次页面仍可正常切换语言。
+             */
+        }
+    }
+
     function setText(selector, value) {
-        const element = document.querySelector(selector);
+        const element =
+            document.querySelector(selector);
 
         if (element && value) {
             element.textContent = value;
         }
     }
 
-    function setAttribute(selector, attribute, value) {
-        const element = document.querySelector(selector);
+    function setAttribute(
+        selector,
+        attribute,
+        value
+    ) {
+        const element =
+            document.querySelector(selector);
 
         if (element && value) {
-            element.setAttribute(attribute, value);
+            element.setAttribute(
+                attribute,
+                value
+            );
         }
     }
 
@@ -236,26 +268,39 @@
         );
     }
 
-   function applyDirection(languageCode) {
-    /*
-     * 当前阶段只翻译公共导航，不翻转整个网站。
-     * 等阿拉伯语正文和独立页面完成后，再启用全站 RTL。
-     */
-    document.documentElement.lang = languageCode;
-    document.documentElement.dir = 'ltr';
+    function applyDirection(languageCode) {
+        /*
+         * 当前只有公共导航完成翻译，正文仍可能是中文。
+         * 所以暂时不对整个网站启用 RTL 镜像布局。
+         */
+        document.documentElement.lang =
+            languageCode;
 
-    document.body.classList.remove('freecat-rtl');
+        document.documentElement.setAttribute(
+            'dir',
+            'ltr'
+        );
 
-    /*
-     * 只让明确标记为阿拉伯语的文字从右向左显示，
-     * 不改变页面整体布局。
-     */
-    document
-        .querySelectorAll('[lang="ar"]')
-        .forEach((element) => {
-            element.setAttribute('dir', 'rtl');
-        });
-}
+        if (document.body) {
+            document.body.removeAttribute('dir');
+            document.body.classList.remove(
+                'freecat-rtl'
+            );
+        }
+
+        /*
+         * 只让明确标记为阿拉伯语的文字使用 RTL，
+         * 不改变 Logo、导航、侧栏及正文的位置。
+         */
+        document
+            .querySelectorAll('[lang="ar"]')
+            .forEach((element) => {
+                element.setAttribute(
+                    'dir',
+                    'rtl'
+                );
+            });
+    }
 
     function applyNavigation(dictionary) {
         setText(
@@ -292,46 +337,83 @@
             '#nav-links a[href="/about"]',
             dictionary.about
         );
+
+        const navigation =
+            document.getElementById('nav-links');
+
+        if (navigation) {
+            navigation.setAttribute(
+                'dir',
+                'ltr'
+            );
+        }
     }
 
     function applyLanguagePanel(
         languageCode,
         dictionary
     ) {
-        const menu = document.getElementById(
-            'language-menu'
-        );
+        const menu =
+            document.getElementById(
+                'language-menu'
+            );
 
         if (!menu) {
             return;
         }
 
-        const panelTitle = menu.querySelector(
-            'div h2'
-        );
+        /*
+         * 菜单保持左到右排列，避免阿拉伯语选中后
+         * 整个语言卡片面板镜像移动。
+         */
+        menu.setAttribute('dir', 'ltr');
 
-        const panelDescription = menu.querySelector(
-            'div h2 + p'
-        );
+        const panelTitle =
+            menu.querySelector('div h2');
 
-        const status = document.getElementById(
-            'language-selection-status'
-        );
+        const panelDescription =
+            menu.querySelector('div h2 + p');
+
+        const status =
+            document.getElementById(
+                'language-selection-status'
+            );
 
         if (panelTitle) {
             panelTitle.textContent =
                 dictionary.chooseLanguage;
+
+            panelTitle.setAttribute(
+                'dir',
+                languageCode === 'ar'
+                    ? 'rtl'
+                    : 'ltr'
+            );
         }
 
         if (panelDescription) {
             panelDescription.textContent =
                 dictionary.languageDescription;
+
+            panelDescription.setAttribute(
+                'dir',
+                languageCode === 'ar'
+                    ? 'rtl'
+                    : 'ltr'
+            );
         }
 
         if (status) {
             status.textContent =
-                `${dictionary.currentChoice}：` +
+                `${dictionary.currentChoice}: ` +
                 getLanguageName(languageCode);
+
+            status.setAttribute(
+                'dir',
+                languageCode === 'ar'
+                    ? 'rtl'
+                    : 'ltr'
+            );
         }
     }
 
@@ -367,52 +449,108 @@
         );
     }
 
-    function applyLanguage(languageCode) {
-        const dictionary =
-            translations[languageCode] ||
-            translations[DEFAULT_LANGUAGE];
+    function updateSelectedCard(languageCode) {
+        const languageCards =
+            document.querySelectorAll(
+                '[data-language]'
+            );
 
-        applyDirection(languageCode);
+        languageCards.forEach((card) => {
+            const selected =
+                card.dataset.language ===
+                languageCode;
+
+            card.setAttribute(
+                'aria-current',
+                selected ? 'true' : 'false'
+            );
+
+            card.classList.toggle(
+                'border-primary',
+                selected
+            );
+
+            card.classList.toggle(
+                'bg-emerald-50',
+                selected
+            );
+
+            card.classList.toggle(
+                'dark:bg-emerald-950/30',
+                selected
+            );
+        });
+    }
+
+    function applyLanguage(languageCode) {
+        const safeLanguageCode =
+            translations[languageCode]
+                ? languageCode
+                : DEFAULT_LANGUAGE;
+
+        const dictionary =
+            translations[safeLanguageCode];
+
+        applyDirection(safeLanguageCode);
         applyNavigation(dictionary);
         applyLanguagePanel(
-            languageCode,
+            safeLanguageCode,
             dictionary
         );
         applyControls(dictionary);
+        updateSelectedCard(
+            safeLanguageCode
+        );
 
         document.dispatchEvent(
             new CustomEvent(
                 'freecat:language-changed',
                 {
                     detail: {
-                        language: languageCode
+                        language:
+                            safeLanguageCode
                     }
                 }
             )
         );
     }
 
+    function handleLanguageClick(event) {
+        const languageCard =
+            event.target.closest(
+                '[data-language]'
+            );
+
+        if (!languageCard) {
+            return;
+        }
+
+        const languageCode =
+            languageCard.dataset.language;
+
+        if (!translations[languageCode]) {
+            return;
+        }
+
+        saveLanguage(languageCode);
+
+        /*
+         * 等 header.html 中的菜单脚本完成后，
+         * 再更新公共界面。
+         */
+        window.setTimeout(() => {
+            applyLanguage(languageCode);
+        }, 0);
+    }
+
     function initialiseLanguageSystem() {
-        applyLanguage(getSavedLanguage());
+        applyLanguage(
+            getSavedLanguage()
+        );
 
         document.addEventListener(
             'click',
-            (event) => {
-                const languageCard =
-                    event.target.closest(
-                        '[data-language]'
-                    );
-
-                if (!languageCard) {
-                    return;
-                }
-
-                window.setTimeout(() => {
-                    applyLanguage(
-                        languageCard.dataset.language
-                    );
-                }, 0);
-            }
+            handleLanguageClick
         );
     }
 
@@ -420,7 +558,9 @@
         document.addEventListener(
             'DOMContentLoaded',
             initialiseLanguageSystem,
-            { once: true }
+            {
+                once: true
+            }
         );
     } else {
         initialiseLanguageSystem();
@@ -428,8 +568,7 @@
 
     window.FreeCatI18n = {
         applyLanguage,
-        getLanguage:
-            getSavedLanguage,
+        getLanguage: getSavedLanguage,
         translations
     };
 })();
