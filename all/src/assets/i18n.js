@@ -236,19 +236,26 @@
         );
     }
 
-    function applyDirection(languageCode) {
-        const isRtl = languageCode === 'ar';
+   function applyDirection(languageCode) {
+    /*
+     * 当前阶段只翻译公共导航，不翻转整个网站。
+     * 等阿拉伯语正文和独立页面完成后，再启用全站 RTL。
+     */
+    document.documentElement.lang = languageCode;
+    document.documentElement.dir = 'ltr';
 
-        document.documentElement.lang = languageCode;
-        document.documentElement.dir = isRtl
-            ? 'rtl'
-            : 'ltr';
+    document.body.classList.remove('freecat-rtl');
 
-        document.body.classList.toggle(
-            'freecat-rtl',
-            isRtl
-        );
-    }
+    /*
+     * 只让明确标记为阿拉伯语的文字从右向左显示，
+     * 不改变页面整体布局。
+     */
+    document
+        .querySelectorAll('[lang="ar"]')
+        .forEach((element) => {
+            element.setAttribute('dir', 'rtl');
+        });
+}
 
     function applyNavigation(dictionary) {
         setText(
