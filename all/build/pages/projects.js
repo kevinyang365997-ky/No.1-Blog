@@ -80,6 +80,20 @@ function formatDate(value) {
     return source;
 }
 
+function normalizeStringArray(value) {
+    if (Array.isArray(value)) {
+        return value
+            .map((item) => String(item || '').trim())
+            .filter(Boolean);
+    }
+
+    if (!value) {
+        return [];
+    }
+
+    return [String(value).trim()].filter(Boolean);
+}
+
 function loadProjects(projectsDir) {
     if (!fs.existsSync(projectsDir)) {
         console.log('  Projects directory not found.');
@@ -139,7 +153,8 @@ function loadProjects(projectsDir) {
             cover: String(data.cover || '').trim(),
             summary: String(data.summary || '').trim(),
             featured: data.featured === true,
-            content
+           relatedVideos: normalizeStringArray(data.related_videos),
+content
         });
     });
 
@@ -305,6 +320,31 @@ function renderDetailCover(project) {
     `;
 }
 
+function renderRelatedVideos(project) {
+    if (!project.relatedVideos.length) {
+        return '<p>暂未关联视频。</p>';
+    }
+
+    const items = project.relatedVideos
+        .map((videoId) => {
+            const safeId = encodeURIComponent(videoId);
+
+            return `
+                <li>
+                    <a
+                        href="/videos/${safeId}/"
+                        class="text-primary hover:underline"
+                    >
+                        ${escape(videoId)}
+                    </a>
+                </li>
+            `;
+        })
+        .join('');
+
+    return `<ul class="space-y-2">${items}</ul>`;
+}
+
 function renderEmptyRelatedText() {
     return '<p>相关内容将在后续功能中自动关联。</p>';
 }
@@ -404,9 +444,9 @@ function generateDetailPages({
                 renderEmptyRelatedText()
             ],
             [
-                '<!-- PROJECT_RELATED_VIDEOS -->',
-                renderEmptyRelatedText()
-            ],
+    '<!-- PROJECT_RELATED_VIDEOS -->',
+    renderRelatedVideos(project)
+],
             [
                 '<!-- PROJECT_RELATED_PROJECTS -->',
                 renderEmptyRelatedText()
