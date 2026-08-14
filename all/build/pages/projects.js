@@ -141,7 +141,9 @@ function loadProjects(projectsDir) {
         projects.push({
             id,
             filename,
-            title: String(data.title || path.parse(filename).name).trim(),
+            title: String(
+                data.title || path.parse(filename).name
+            ).trim(),
             category,
             categoryLabel: CATEGORY_LABELS[category],
             date: formatDate(data.date),
@@ -153,8 +155,24 @@ function loadProjects(projectsDir) {
             cover: String(data.cover || '').trim(),
             summary: String(data.summary || '').trim(),
             featured: data.featured === true,
-           relatedVideos: normalizeStringArray(data.related_videos),
-content
+
+            relatedArticles: normalizeStringArray(
+                data.related_articles
+            ),
+
+            relatedVideos: normalizeStringArray(
+                data.related_videos
+            ),
+
+            relatedGallery: normalizeStringArray(
+                data.related_gallery
+            ),
+
+            relatedProjects: normalizeStringArray(
+                data.related_projects
+            ),
+
+            content
         });
     });
 
@@ -226,7 +244,8 @@ function renderProjectCover(project) {
 }
 
 function renderProjectCard(project) {
-    const projectUrl = `/projects/${encodeURIComponent(project.id)}/`;
+    const projectUrl =
+        `/projects/${encodeURIComponent(project.id)}/`;
 
     return `
         <article
@@ -259,14 +278,20 @@ function renderProjectCard(project) {
                         class="mb-5 grid grid-cols-2 gap-3 border-t border-slate-100 pt-4 text-xs dark:border-slate-800"
                     >
                         <div>
-                            <dt class="mb-1 text-slate-400">项目时间</dt>
+                            <dt class="mb-1 text-slate-400">
+                                项目时间
+                            </dt>
+
                             <dd class="text-slate-600 dark:text-slate-300">
                                 ${escape(project.date)}
                             </dd>
                         </div>
 
                         <div>
-                            <dt class="mb-1 text-slate-400">承担角色</dt>
+                            <dt class="mb-1 text-slate-400">
+                                承担角色
+                            </dt>
+
                             <dd class="text-slate-600 dark:text-slate-300">
                                 ${escape(project.role)}
                             </dd>
@@ -320,6 +345,34 @@ function renderDetailCover(project) {
     `;
 }
 
+function renderRelatedArticles(project) {
+    if (!project.relatedArticles.length) {
+        return '<p>暂未关联文章。</p>';
+    }
+
+    const items = project.relatedArticles
+        .map((articlePath) => {
+            const safePath = String(articlePath || '').trim();
+            const href = safePath.startsWith('/')
+                ? safePath
+                : `/${safePath}`;
+
+            return `
+                <li>
+                    <a
+                        href="${escape(href)}"
+                        class="text-primary hover:underline"
+                    >
+                        ${escape(articlePath)}
+                    </a>
+                </li>
+            `;
+        })
+        .join('');
+
+    return `<ul class="space-y-2">${items}</ul>`;
+}
+
 function renderRelatedVideos(project) {
     if (!project.relatedVideos.length) {
         return '<p>暂未关联视频。</p>';
@@ -345,8 +398,59 @@ function renderRelatedVideos(project) {
     return `<ul class="space-y-2">${items}</ul>`;
 }
 
-function renderEmptyRelatedText() {
-    return '<p>相关内容将在后续功能中自动关联。</p>';
+function renderRelatedGallery(project) {
+    if (!project.relatedGallery.length) {
+        return '<p>暂未关联图片。</p>';
+    }
+
+    const items = project.relatedGallery
+        .map((galleryId) => {
+            const safeId = encodeURIComponent(galleryId);
+
+            return `
+                <li>
+                    <a
+                        href="/gallery/${safeId}/"
+                        class="text-primary hover:underline"
+                    >
+                        ${escape(galleryId)}
+                    </a>
+                </li>
+            `;
+        })
+        .join('');
+
+    return `<ul class="space-y-2">${items}</ul>`;
+}
+
+function renderRelatedProjects(project) {
+    if (!project.relatedProjects.length) {
+        return '<p>暂未关联其他项目。</p>';
+    }
+
+    const items = project.relatedProjects
+        .filter((projectId) => projectId !== project.id)
+        .map((projectId) => {
+            const safeId = encodeURIComponent(projectId);
+
+            return `
+                <li>
+                    <a
+                        href="/projects/${safeId}/"
+                        class="text-primary hover:underline"
+                    >
+                        ${escape(projectId)}
+                    </a>
+                </li>
+            `;
+        })
+        .join('');
+
+    if (!items) {
+        return '<p>暂未关联其他项目。</p>';
+    }
+
+    return `<ul class="space-y-2">${items}</ul>`;
 }
 
 function generateListPage({
@@ -357,13 +461,18 @@ function generateListPage({
     outputDir
 }) {
     const pageTitle =
-        `项目 - ${siteConfig.site_title || siteConfig.site_name || 'FreeCat Blog'}`;
+        `项目 - ${
+            siteConfig.site_title ||
+            siteConfig.site_name ||
+            'FreeCat Blog'
+        }`;
 
     const canonicalPath = '/projects';
 
     const seoHead = seo.renderHeadTags({
         title: pageTitle,
-        description: '记录主导项目、协作项目和实践中形成的解决方案。',
+        description:
+            '记录主导项目、协作项目和实践中形成的解决方案。',
         canonicalPath,
         siteConfig,
         seoConfig,
@@ -407,7 +516,11 @@ function generateDetailPages({
         const projectPath = `/projects/${project.id}/`;
 
         const pageTitle =
-            `${project.title} - ${siteConfig.site_title || siteConfig.site_name || 'FreeCat Blog'}`;
+            `${project.title} - ${
+                siteConfig.site_title ||
+                siteConfig.site_name ||
+                'FreeCat Blog'
+            }`;
 
         const seoHead = seo.renderHeadTags({
             title: pageTitle,
@@ -429,27 +542,49 @@ function generateDetailPages({
             ['<!-- PROJECT_SEO_HEAD -->', seoHead],
             [/<!-- PROJECT_TITLE -->/g, escape(project.title)],
             ['<!-- PROJECT_SUMMARY -->', escape(project.summary)],
-            ['<!-- PROJECT_CATEGORY -->', renderCategoryBadge(project)],
-            ['<!-- PROJECT_STATUS -->', renderStatusBadge(project)],
-            ['<!-- PROJECT_FEATURED -->', renderFeaturedBadge(project)],
-            ['<!-- PROJECT_COVER -->', renderDetailCover(project)],
+            [
+                '<!-- PROJECT_CATEGORY -->',
+                renderCategoryBadge(project)
+            ],
+            [
+                '<!-- PROJECT_STATUS -->',
+                renderStatusBadge(project)
+            ],
+            [
+                '<!-- PROJECT_FEATURED -->',
+                renderFeaturedBadge(project)
+            ],
+            [
+                '<!-- PROJECT_COVER -->',
+                renderDetailCover(project)
+            ],
             ['<!-- PROJECT_DATE -->', escape(project.date)],
-            ['<!-- PROJECT_LOCATION -->', escape(project.location)],
+            [
+                '<!-- PROJECT_LOCATION -->',
+                escape(project.location)
+            ],
             ['<!-- PROJECT_ROLE -->', escape(project.role)],
-            ['<!-- PROJECT_UPDATED -->', escape(project.updated)],
+            [
+                '<!-- PROJECT_UPDATED -->',
+                escape(project.updated)
+            ],
             ['<!-- PROJECT_CONTENT -->', rendered.html],
             ['<!-- PROJECT_TOC -->', rendered.toc],
             [
                 '<!-- PROJECT_RELATED_ARTICLES -->',
-                renderEmptyRelatedText()
+                renderRelatedArticles(project)
             ],
             [
-    '<!-- PROJECT_RELATED_VIDEOS -->',
-    renderRelatedVideos(project)
-],
+                '<!-- PROJECT_RELATED_VIDEOS -->',
+                renderRelatedVideos(project)
+            ],
+            [
+                '<!-- PROJECT_RELATED_GALLERY -->',
+                renderRelatedGallery(project)
+            ],
             [
                 '<!-- PROJECT_RELATED_PROJECTS -->',
-                renderEmptyRelatedText()
+                renderRelatedProjects(project)
             ]
         ]);
 
@@ -480,7 +615,7 @@ function generate({
     projectsDir,
     outputDir
 }) {
-    console.log('🗂️ Generating project pages...');
+    console.log('Generating project pages...');
 
     const projects = loadProjects(projectsDir);
 
