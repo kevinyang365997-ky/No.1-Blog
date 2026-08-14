@@ -119,25 +119,6 @@
             themeLabel: 'Alternar tema'
         },
 
-        ar: {
-            home: 'الرئيسية',
-            articles: 'المقالات',
-            resume: 'السيرة الذاتية',
-            projects: 'المشاريع',
-            gallery: 'معرض الصور',
-            videos: 'الفيديوهات',
-            about: 'حول',
-            chooseLanguage: 'اختر اللغة',
-            languageDescription:
-                'اختر اللغة المستخدمة في واجهة الموقع.',
-            currentChoice: 'الاختيار الحالي',
-            searchPlaceholder: 'البحث في المقالات...',
-            searchLabel: 'بحث',
-            closeSearchLabel: 'إغلاق البحث',
-            tagsLabel: 'عرض الوسوم',
-            themeLabel: 'تبديل المظهر'
-        },
-
         de: {
             home: 'Startseite',
             articles: 'Artikel',
