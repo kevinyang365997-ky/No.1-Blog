@@ -23,7 +23,12 @@
             closeSearchLabel: '关闭搜索',
             tagsLabel: '查看标签',
             themeLabel: '切换主题',
-            recentUpdates: '最近更新'
+            recentUpdates: '最近更新',
+            searchGoBack: '返回',
+            searchEmptyPrompt: '请在上方搜索框中输入关键词。',
+            searchingFor: '正在搜索：',
+            searchNoResultsTitle: '没有找到结果',
+            searchNoResultsDescription: '请尝试使用其他关键词搜索',
         },
 
         'zh-TW': {
@@ -43,7 +48,12 @@
             closeSearchLabel: '關閉搜尋',
             tagsLabel: '查看標籤',
             themeLabel: '切換主題',
-            recentUpdates: '最近更新'
+            recentUpdates: '最近更新',
+            searchGoBack: '返回',
+            searchEmptyPrompt: '請在上方搜尋框中輸入關鍵字。',
+            searchingFor: '正在搜尋：',
+            searchNoResultsTitle: '找不到結果',
+            searchNoResultsDescription: '請嘗試使用其他關鍵字搜尋',
         },
 
         'en-US': {
@@ -63,7 +73,12 @@
             closeSearchLabel: 'Close search',
             tagsLabel: 'View tags',
             themeLabel: 'Toggle theme',
-            recentUpdates: 'Recent Updates'
+            recentUpdates: 'Recent Updates',
+            searchGoBack: 'Go Back',
+            searchEmptyPrompt: 'Enter a search term in the search box above.',
+            searchingFor: 'Searching for:',
+            searchNoResultsTitle: 'No results found',
+            searchNoResultsDescription: 'Try searching with different keywords',
         },
 
         'en-GB': {
@@ -200,6 +215,9 @@
         const home =
             config.home || {};
 
+        const searchPage =
+            config.searchPage || {};
+
         translations['en-US'] = {
             ...current,
             home:
@@ -234,7 +252,22 @@
                 current.currentChoice,
             recentUpdates:
                 home.recentUpdates ||
-                current.recentUpdates
+                current.recentUpdates,
+            searchGoBack:
+                searchPage.goBack ||
+                current.searchGoBack,
+            searchEmptyPrompt:
+                searchPage.emptyPrompt ||
+                current.searchEmptyPrompt,
+            searchingFor:
+                searchPage.searchingFor ||
+                current.searchingFor,
+            searchNoResultsTitle:
+                searchPage.noResultsTitle ||
+                current.searchNoResultsTitle,
+            searchNoResultsDescription:
+                searchPage.noResultsDescription ||
+                current.searchNoResultsDescription
         };
     }
 
@@ -555,6 +588,31 @@
         setText(
             '#recent-updates-heading',
             dictionary.recentUpdates
+        );
+
+        setText(
+            '#search-go-back',
+            dictionary.searchGoBack
+        );
+
+        setText(
+            '#search-empty-prompt',
+            dictionary.searchEmptyPrompt
+        );
+
+        setText(
+            '#searching-for-label',
+            dictionary.searchingFor
+        );
+
+        setText(
+            '#search-no-results-title',
+            dictionary.searchNoResultsTitle
+        );
+
+        setText(
+            '#search-no-results-description',
+            dictionary.searchNoResultsDescription
         );
 
         updateSelectedCard(
