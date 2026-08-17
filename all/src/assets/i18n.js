@@ -98,7 +98,12 @@
             closeSearchLabel: 'Close search',
             tagsLabel: 'View tags',
             themeLabel: 'Toggle theme',
-            recentUpdates: 'Recent Updates'
+            recentUpdates: 'Recent Updates',
+            searchGoBack: 'Go Back',
+            searchEmptyPrompt: 'Enter a search term in the search box above.',
+            searchingFor: 'Searching for:',
+            searchNoResultsTitle: 'No results found',
+            searchNoResultsDescription: 'Try searching with different keywords'
         },
 
         es: {
@@ -118,7 +123,12 @@
             closeSearchLabel: 'Cerrar búsqueda',
             tagsLabel: 'Ver etiquetas',
             themeLabel: 'Cambiar tema',
-            recentUpdates: 'Actualizaciones recientes'
+            recentUpdates: 'Actualizaciones recientes',
+            searchGoBack: 'Volver',
+            searchEmptyPrompt: 'Introduce un término de búsqueda en el cuadro de arriba.',
+            searchingFor: 'Buscando:',
+            searchNoResultsTitle: 'No se encontraron resultados',
+            searchNoResultsDescription: 'Prueba a buscar con otras palabras clave'
         },
 
         pt: {
@@ -138,7 +148,12 @@
             closeSearchLabel: 'Fechar pesquisa',
             tagsLabel: 'Ver etiquetas',
             themeLabel: 'Alternar tema',
-            recentUpdates: 'Atualizações recentes'
+            recentUpdates: 'Atualizações recentes',
+            searchGoBack: 'Voltar',
+            searchEmptyPrompt: 'Introduza um termo de pesquisa na caixa acima.',
+            searchingFor: 'A pesquisar:',
+            searchNoResultsTitle: 'Nenhum resultado encontrado',
+            searchNoResultsDescription: 'Tente pesquisar com outras palavras-chave'
         },
 
         de: {
@@ -158,7 +173,12 @@
             closeSearchLabel: 'Suche schließen',
             tagsLabel: 'Schlagwörter anzeigen',
             themeLabel: 'Design wechseln',
-            recentUpdates: 'Neueste Aktualisierungen'
+            recentUpdates: 'Neueste Aktualisierungen',
+            searchGoBack: 'Zurück',
+            searchEmptyPrompt: 'Gib oben einen Suchbegriff ein.',
+            searchingFor: 'Suche nach:',
+            searchNoResultsTitle: 'Keine Ergebnisse gefunden',
+            searchNoResultsDescription: 'Versuche es mit anderen Suchbegriffen'
         },
 
         fr: {
@@ -178,7 +198,12 @@
             closeSearchLabel: 'Fermer la recherche',
             tagsLabel: 'Voir les étiquettes',
             themeLabel: 'Changer de thème',
-            recentUpdates: 'Mises à jour récentes'
+            recentUpdates: 'Mises à jour récentes',
+            searchGoBack: 'Retour',
+            searchEmptyPrompt: 'Saisissez un terme dans le champ de recherche ci-dessus.',
+            searchingFor: 'Recherche :',
+            searchNoResultsTitle: 'Aucun résultat trouvé',
+            searchNoResultsDescription: 'Essayez avec d’autres mots-clés'
         },
 
         ru: {
@@ -198,7 +223,12 @@
             closeSearchLabel: 'Закрыть поиск',
             tagsLabel: 'Показать теги',
             themeLabel: 'Сменить тему',
-            recentUpdates: 'Последние обновления'
+            recentUpdates: 'Последние обновления',
+            searchGoBack: 'Назад',
+            searchEmptyPrompt: 'Введите поисковый запрос в поле выше.',
+            searchingFor: 'Поиск:',
+            searchNoResultsTitle: 'Ничего не найдено',
+            searchNoResultsDescription: 'Попробуйте использовать другие ключевые слова'
         }
     };
 
