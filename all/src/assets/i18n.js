@@ -3,6 +3,7 @@
 
     const STORAGE_KEY = 'freecat-language';
     const DEFAULT_LANGUAGE = 'zh-CN';
+    const EN_US_CONFIG_URL = '/i18n/en-US.json';
 
     const translations = {
         'zh-CN': {
@@ -177,6 +178,79 @@
         }
     };
 
+    function mergeEnglishConfig(config) {
+        const current =
+            translations['en-US'];
+
+        const navigation =
+            config.navigation || {};
+
+        const languageSelector =
+            config.languageSelector || {};
+
+        translations['en-US'] = {
+            ...current,
+            home:
+                navigation.home ||
+                current.home,
+            articles:
+                navigation.articles ||
+                current.articles,
+            resume:
+                navigation.resume ||
+                current.resume,
+            projects:
+                navigation.projects ||
+                current.projects,
+            gallery:
+                navigation.gallery ||
+                current.gallery,
+            videos:
+                navigation.videos ||
+                current.videos,
+            about:
+                navigation.about ||
+                current.about,
+            chooseLanguage:
+                languageSelector.title ||
+                current.chooseLanguage,
+            languageDescription:
+                languageSelector.description ||
+                current.languageDescription,
+            currentChoice:
+                languageSelector.currentSelection ||
+                current.currentChoice
+        };
+    }
+
+    async function loadExternalTranslations() {
+        try {
+            const response = await fetch(
+                EN_US_CONFIG_URL,
+                {
+                    cache: 'no-cache'
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error(
+                    `HTTP ${response.status}`
+                );
+            }
+
+            const config =
+                await response.json();
+
+            mergeEnglishConfig(config);
+        } catch (error) {
+            console.warn(
+                'Unable to load English translation config; using built-in fallback.',
+                error
+            );
+        }
+    }
+
+    
     function getSavedLanguage() {
         try {
             const savedLanguage =
@@ -507,7 +581,9 @@
         }, 0);
     }
 
-    function initialiseLanguageSystem() {
+    async function initialiseLanguageSystem() {
+        await loadExternalTranslations();
+
         applyLanguage(
             getSavedLanguage()
         );
