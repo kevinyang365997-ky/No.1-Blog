@@ -250,33 +250,20 @@
     }
 
     function applyDirection(languageCode) {
-    document.documentElement.lang =
-        languageCode;
+        document.documentElement.lang =
+            languageCode;
 
-    document.documentElement.setAttribute(
-        'dir',
-        'ltr'
-    );
-
-    if (document.body) {
-        document.body.removeAttribute('dir');
-        document.body.classList.remove(
-            'freecat-rtl'
+        document.documentElement.setAttribute(
+            'dir',
+            'ltr'
         );
-    }
-}
-        /*
-         * 只让明确标记为阿拉伯语的文字使用 RTL，
-         * 不改变 Logo、导航、侧栏及正文的位置。
-         */
-        document
-            .querySelectorAll('[lang="ar"]')
-            .forEach((element) => {
-                element.setAttribute(
-                    'dir',
-                    'rtl'
-                );
-            });
+
+        if (document.body) {
+            document.body.removeAttribute('dir');
+            document.body.classList.remove(
+                'freecat-rtl'
+            );
+        }
     }
 
     function applyNavigation(dictionary) {
