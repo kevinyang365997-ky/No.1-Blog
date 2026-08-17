@@ -22,7 +22,8 @@
             searchLabel: '搜索',
             closeSearchLabel: '关闭搜索',
             tagsLabel: '查看标签',
-            themeLabel: '切换主题'
+            themeLabel: '切换主题',
+            recentUpdates: '最近更新'
         },
 
         'zh-TW': {
@@ -41,7 +42,8 @@
             searchLabel: '搜尋',
             closeSearchLabel: '關閉搜尋',
             tagsLabel: '查看標籤',
-            themeLabel: '切換主題'
+            themeLabel: '切換主題',
+            recentUpdates: '最近更新'
         },
 
         'en-US': {
@@ -60,7 +62,8 @@
             searchLabel: 'Search',
             closeSearchLabel: 'Close search',
             tagsLabel: 'View tags',
-            themeLabel: 'Toggle theme'
+            themeLabel: 'Toggle theme',
+            recentUpdates: 'Recent Updates'
         },
 
         'en-GB': {
@@ -79,7 +82,8 @@
             searchLabel: 'Search',
             closeSearchLabel: 'Close search',
             tagsLabel: 'View tags',
-            themeLabel: 'Toggle theme'
+            themeLabel: 'Toggle theme',
+            recentUpdates: 'Recent Updates'
         },
 
         es: {
@@ -98,7 +102,8 @@
             searchLabel: 'Buscar',
             closeSearchLabel: 'Cerrar búsqueda',
             tagsLabel: 'Ver etiquetas',
-            themeLabel: 'Cambiar tema'
+            themeLabel: 'Cambiar tema',
+            recentUpdates: 'Actualizaciones recientes'
         },
 
         pt: {
@@ -117,7 +122,8 @@
             searchLabel: 'Pesquisar',
             closeSearchLabel: 'Fechar pesquisa',
             tagsLabel: 'Ver etiquetas',
-            themeLabel: 'Alternar tema'
+            themeLabel: 'Alternar tema',
+            recentUpdates: 'Atualizações recentes'
         },
 
         de: {
@@ -136,7 +142,8 @@
             searchLabel: 'Suchen',
             closeSearchLabel: 'Suche schließen',
             tagsLabel: 'Schlagwörter anzeigen',
-            themeLabel: 'Design wechseln'
+            themeLabel: 'Design wechseln',
+            recentUpdates: 'Neueste Aktualisierungen'
         },
 
         fr: {
@@ -155,7 +162,8 @@
             searchLabel: 'Rechercher',
             closeSearchLabel: 'Fermer la recherche',
             tagsLabel: 'Voir les étiquettes',
-            themeLabel: 'Changer de thème'
+            themeLabel: 'Changer de thème',
+            recentUpdates: 'Mises à jour récentes'
         },
 
         ru: {
@@ -174,7 +182,8 @@
             searchLabel: 'Поиск',
             closeSearchLabel: 'Закрыть поиск',
             tagsLabel: 'Показать теги',
-            themeLabel: 'Сменить тему'
+            themeLabel: 'Сменить тему',
+            recentUpdates: 'Последние обновления'
         }
     };
 
@@ -187,6 +196,9 @@
 
         const languageSelector =
             config.languageSelector || {};
+
+        const home =
+            config.home || {};
 
         translations['en-US'] = {
             ...current,
@@ -219,7 +231,10 @@
                 current.languageDescription,
             currentChoice:
                 languageSelector.currentSelection ||
-                current.currentChoice
+                current.currentChoice,
+            recentUpdates:
+                home.recentUpdates ||
+                current.recentUpdates
         };
     }
 
@@ -536,6 +551,12 @@
             dictionary
         );
         applyControls(dictionary);
+
+        setText(
+            '#recent-updates-heading',
+            dictionary.recentUpdates
+        );
+
         updateSelectedCard(
             safeLanguageCode
         );
