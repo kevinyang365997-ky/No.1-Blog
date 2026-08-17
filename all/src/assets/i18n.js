@@ -5,6 +5,9 @@
     const DEFAULT_LANGUAGE = 'zh-CN';
     const EN_US_CONFIG_URL = '/i18n/en-US.json';
 
+    let dynamicTranslationTimer = null;
+    let dynamicTranslationObserver = null;
+
     const translations = {
         'zh-CN': {
             home: '首页',
@@ -682,6 +685,57 @@
         );
     }
 
+        function observeDynamicContent() {
+        if (
+            dynamicTranslationObserver ||
+            !document.body
+        ) {
+            return;
+        }
+
+        dynamicTranslationObserver =
+            new MutationObserver((mutations) => {
+                const hasNewContent =
+                    mutations.some(
+                        (mutation) =>
+                            mutation.addedNodes.length > 0
+                    );
+
+                if (!hasNewContent) {
+                    return;
+                }
+
+                window.clearTimeout(
+                    dynamicTranslationTimer
+                );
+
+                dynamicTranslationTimer =
+                    window.setTimeout(() => {
+                        dynamicTranslationObserver.disconnect();
+
+                        applyLanguage(
+                            getSavedLanguage()
+                        );
+
+                        dynamicTranslationObserver.observe(
+                            document.body,
+                            {
+                                childList: true,
+                                subtree: true
+                            }
+                        );
+                    }, 50);
+            });
+
+        dynamicTranslationObserver.observe(
+            document.body,
+            {
+                childList: true,
+                subtree: true
+            }
+        );
+    }
+    
     function handleLanguageClick(event) {
         const languageCard =
             event.target.closest(
@@ -710,19 +764,21 @@
         }, 0);
     }
 
-    async function initialiseLanguageSystem() {
+        async function initialiseLanguageSystem() {
         await loadExternalTranslations();
 
         applyLanguage(
             getSavedLanguage()
         );
 
+        observeDynamicContent();
+
         document.addEventListener(
             'click',
             handleLanguageClick
         );
     }
-
+    
     if (document.readyState === 'loading') {
         document.addEventListener(
             'DOMContentLoaded',
