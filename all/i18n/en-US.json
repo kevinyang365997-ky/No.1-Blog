@@ -34,6 +34,13 @@
     "recentUpdates": "Recent Updates",
     "latestArticles": "Latest Articles"
   },
+  "searchPage": {
+    "goBack": "Go Back",
+    "emptyPrompt": "Enter a search term in the search box above.",
+    "searchingFor": "Searching for:",
+    "noResultsTitle": "No results found",
+    "noResultsDescription": "Try searching with different keywords"
+  },
   "projects": {
     "pageTitle": "Projects & Solutions",
     "pageDescription": "Projects I led or participated in, along with reusable solutions developed through practice.",
