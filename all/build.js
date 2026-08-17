@@ -58,6 +58,7 @@ const DIRS = {
     shared: path.join(__dirname, 'shared'),
     images: path.join(__dirname, 'image'),
     files: path.join(__dirname, 'files'),
+    i18n: path.join(__dirname, 'i18n'),
     output: path.join(__dirname, 'dist'),
     templates: path.join(__dirname, 'src'),
     partials: path.join(__dirname, 'src', 'partials'),
@@ -364,6 +365,7 @@ if (fs.existsSync(DIRS.assets)) copyDir(DIRS.assets, path.join(DIRS.output, 'ass
 if (fs.existsSync(DIRS.shared)) copyDir(DIRS.shared, path.join(DIRS.output, 'assets'));
 if (fs.existsSync(DIRS.images)) copyDir(DIRS.images, path.join(DIRS.output, 'image'));
 if (fs.existsSync(DIRS.files)) copyDir(DIRS.files, path.join(DIRS.output, 'files'));
+if (fs.existsSync(DIRS.i18n)) copyDir(DIRS.i18n, path.join(DIRS.output, 'i18n'));
 
 // ===== 6.6 生成 JS bundle（CSS bundle 需等 Tailwind 编译完成，见第 8 步之后）=====
 console.log('🧩 Writing JS bundles...');
