@@ -23,6 +23,7 @@
             closeSearchLabel: '关闭搜索',
             tagsLabel: '查看标签',
             themeLabel: '切换主题',
+            updateSortLabel: '按更新排序',
             recentUpdates: '最近更新',
             searchGoBack: '返回',
             searchEmptyPrompt: '请在上方搜索框中输入关键词。',
@@ -48,6 +49,7 @@
             closeSearchLabel: '關閉搜尋',
             tagsLabel: '查看標籤',
             themeLabel: '切換主題',
+            updateSortLabel: '按更新時間排序',
             recentUpdates: '最近更新',
             searchGoBack: '返回',
             searchEmptyPrompt: '請在上方搜尋框中輸入關鍵字。',
@@ -73,6 +75,7 @@
             closeSearchLabel: 'Close search',
             tagsLabel: 'View tags',
             themeLabel: 'Toggle theme',
+            updateSortLabel: 'Sort by last update',
             recentUpdates: 'Recent Updates',
             searchGoBack: 'Go Back',
             searchEmptyPrompt: 'Enter a search term in the search box above.',
@@ -98,6 +101,7 @@
             closeSearchLabel: 'Close search',
             tagsLabel: 'View tags',
             themeLabel: 'Toggle theme',
+            updateSortLabel: 'Sort by last update',
             recentUpdates: 'Recent Updates',
             searchGoBack: 'Go Back',
             searchEmptyPrompt: 'Enter a search term in the search box above.',
@@ -123,6 +127,7 @@
             closeSearchLabel: 'Cerrar búsqueda',
             tagsLabel: 'Ver etiquetas',
             themeLabel: 'Cambiar tema',
+            updateSortLabel: 'Ordenar por actualización',
             recentUpdates: 'Actualizaciones recientes',
             searchGoBack: 'Volver',
             searchEmptyPrompt: 'Introduce un término de búsqueda en el cuadro de arriba.',
@@ -148,6 +153,7 @@
             closeSearchLabel: 'Fechar pesquisa',
             tagsLabel: 'Ver etiquetas',
             themeLabel: 'Alternar tema',
+            updateSortLabel: 'Ordenar por atualização',
             recentUpdates: 'Atualizações recentes',
             searchGoBack: 'Voltar',
             searchEmptyPrompt: 'Introduza um termo de pesquisa na caixa acima.',
@@ -173,6 +179,7 @@
             closeSearchLabel: 'Suche schließen',
             tagsLabel: 'Schlagwörter anzeigen',
             themeLabel: 'Design wechseln',
+            updateSortLabel: 'Nach Aktualisierung sortieren',
             recentUpdates: 'Neueste Aktualisierungen',
             searchGoBack: 'Zurück',
             searchEmptyPrompt: 'Gib oben einen Suchbegriff ein.',
@@ -198,6 +205,7 @@
             closeSearchLabel: 'Fermer la recherche',
             tagsLabel: 'Voir les étiquettes',
             themeLabel: 'Changer de thème',
+            updateSortLabel: 'Trier par mise à jour',
             recentUpdates: 'Mises à jour récentes',
             searchGoBack: 'Retour',
             searchEmptyPrompt: 'Saisissez un terme dans le champ de recherche ci-dessus.',
@@ -223,6 +231,7 @@
             closeSearchLabel: 'Закрыть поиск',
             tagsLabel: 'Показать теги',
             themeLabel: 'Сменить тему',
+            updateSortLabel: 'Сортировать по обновлению',
             recentUpdates: 'Последние обновления',
             searchGoBack: 'Назад',
             searchEmptyPrompt: 'Введите поисковый запрос в поле выше.',
@@ -558,6 +567,17 @@
             dictionary.themeLabel
         );
 
+        setAttribute(
+            '#update-sort-switch',
+            'aria-label',
+            dictionary.updateSortLabel
+        );
+
+        setText(
+            '#update-sort-label',
+            dictionary.updateSortLabel
+        );
+        
         setAttribute(
             '#search-input',
             'placeholder',
