@@ -140,7 +140,17 @@
             searchEmptyPrompt: 'Enter a search term in the search box above.',
             searchingFor: 'Searching for:',
             searchNoResultsTitle: 'No results found',
-            searchNoResultsDescription: 'Try searching with different keywords'
+            searchNoResultsDescription: 'Try searching with different keywords',
+            projectsPageTitle: 'Projects & Solutions',
+            projectsPageDescription:
+                'Projects I led or participated in, together with reusable solutions developed through practical experience.',
+            projectsAll: 'All Projects',
+            projectsLead: 'Lead Projects',
+            projectsCollaboration: 'Collaborative Projects',
+            projectsSolutions: 'Solutions',
+            projectsEmptyTitle: 'No Projects Yet',
+            projectsEmptyDescription:
+                'No projects are currently available in this category.'
         },
 
         es: {
