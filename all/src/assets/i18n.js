@@ -5,9 +5,6 @@
     const DEFAULT_LANGUAGE = 'zh-CN';
     const EN_US_CONFIG_URL = '/i18n/en-US.json';
 
-    let dynamicTranslationTimer = null;
-    let dynamicTranslationObserver = null;
-
     const translations = {
         'zh-CN': {
             home: '首页',
@@ -17,22 +14,26 @@
             gallery: '图库',
             videos: '视频',
             about: '关于',
+
             chooseLanguage: '选择语言',
-            languageDescription:
-                '请选择网站界面使用的语言。',
+            languageDescription: '请选择网站界面使用的语言。',
             currentChoice: '当前选择',
+
             searchPlaceholder: '搜索文章……',
             searchLabel: '搜索',
             closeSearchLabel: '关闭搜索',
             tagsLabel: '查看标签',
             themeLabel: '切换主题',
-            updateSortLabel: '按更新排序',
+
             recentUpdates: '最近更新',
+            sortByUpdate: '按更新排序',
+
             searchGoBack: '返回',
             searchEmptyPrompt: '请在上方搜索框中输入关键词。',
             searchingFor: '正在搜索：',
             searchNoResultsTitle: '没有找到结果',
             searchNoResultsDescription: '请尝试使用其他关键词搜索',
+
             projectsPageTitle: '项目与解决方案',
             projectsPageDescription:
                 '记录我主导和协作参与的项目，以及在实践中整理形成的解决方案。',
@@ -41,8 +42,25 @@
             projectsCollaboration: '协作项目',
             projectsSolutions: '解决方案',
             projectsEmptyTitle: '暂无项目',
-            projectsEmptyDescription:
-                '当前分类的内容正在整理中。',
+            projectsEmptyDescription: '当前分类的内容正在整理中。',
+
+            projectCategoryLead: '主导项目',
+            projectCategoryCollaboration: '协作项目',
+            projectCategorySolution: '解决方案',
+
+            projectStatusDraft: '草稿',
+            projectStatusPlanning: '规划中',
+            projectStatusActive: '进行中',
+            projectStatusCompleted: '已完成',
+            projectStatusArchived: '已归档',
+
+            projectFeatured: '精选',
+            projectNoCover: '暂无项目封面',
+            projectNoSummary: '暂无项目摘要',
+            projectDate: '项目时间',
+            projectRole: '承担角色',
+            projectUnfilled: '未填写',
+            projectView: '查看项目'
         },
 
         'zh-TW': {
@@ -53,22 +71,26 @@
             gallery: '圖庫',
             videos: '影片',
             about: '關於',
+
             chooseLanguage: '選擇語言',
-            languageDescription:
-                '請選擇網站介面使用的語言。',
+            languageDescription: '請選擇網站介面使用的語言。',
             currentChoice: '目前選擇',
+
             searchPlaceholder: '搜尋文章……',
             searchLabel: '搜尋',
             closeSearchLabel: '關閉搜尋',
             tagsLabel: '查看標籤',
             themeLabel: '切換主題',
-            updateSortLabel: '按更新時間排序',
+
             recentUpdates: '最近更新',
+            sortByUpdate: '依更新排序',
+
             searchGoBack: '返回',
             searchEmptyPrompt: '請在上方搜尋框中輸入關鍵字。',
             searchingFor: '正在搜尋：',
             searchNoResultsTitle: '找不到結果',
             searchNoResultsDescription: '請嘗試使用其他關鍵字搜尋',
+
             projectsPageTitle: '專案與解決方案',
             projectsPageDescription:
                 '記錄我主導和協作參與的專案，以及在實踐中整理形成的解決方案。',
@@ -77,44 +99,86 @@
             projectsCollaboration: '協作專案',
             projectsSolutions: '解決方案',
             projectsEmptyTitle: '暫無專案',
-            projectsEmptyDescription:
-                '目前分類的內容正在整理中。',
+            projectsEmptyDescription: '目前分類的內容正在整理中。',
+
+            projectCategoryLead: '主導專案',
+            projectCategoryCollaboration: '協作專案',
+            projectCategorySolution: '解決方案',
+
+            projectStatusDraft: '草稿',
+            projectStatusPlanning: '規劃中',
+            projectStatusActive: '進行中',
+            projectStatusCompleted: '已完成',
+            projectStatusArchived: '已封存',
+
+            projectFeatured: '精選',
+            projectNoCover: '暫無專案封面',
+            projectNoSummary: '暫無專案摘要',
+            projectDate: '專案時間',
+            projectRole: '承擔角色',
+            projectUnfilled: '未填寫',
+            projectView: '查看專案'
         },
 
         'en-US': {
             home: 'Home',
             articles: 'Articles',
             resume: 'Resume',
-            projects: 'Projects',
+            projects: 'Project Library',
             gallery: 'Gallery',
             videos: 'Videos',
             about: 'About',
+
             chooseLanguage: 'Choose a language',
             languageDescription:
                 'Choose the language used by the website interface.',
             currentChoice: 'Current selection',
-            searchPlaceholder: 'Search articles...',
+
+            searchPlaceholder: 'Search articles…',
             searchLabel: 'Search',
             closeSearchLabel: 'Close search',
             tagsLabel: 'View tags',
-            themeLabel: 'Toggle theme',
-            updateSortLabel: 'Sort by last update',
+            themeLabel: 'Switch theme',
+
             recentUpdates: 'Recent Updates',
+            sortByUpdate: 'Sort by last update',
+
             searchGoBack: 'Go Back',
-            searchEmptyPrompt: 'Enter a search term in the search box above.',
+            searchEmptyPrompt:
+                'Enter a search term in the search box above.',
             searchingFor: 'Searching for:',
             searchNoResultsTitle: 'No results found',
-            searchNoResultsDescription: 'Try searching with different keywords',
+            searchNoResultsDescription:
+                'Try searching with different keywords',
+
             projectsPageTitle: 'Projects & Solutions',
             projectsPageDescription:
-                'Projects I led or participated in, along with reusable solutions developed through practice.',
+                'Projects I led or participated in, together with reusable solutions developed through practical experience.',
             projectsAll: 'All Projects',
             projectsLead: 'Lead Projects',
             projectsCollaboration: 'Collaborative Projects',
             projectsSolutions: 'Solutions',
-            projectsEmptyTitle: 'No Projects Yet',
+            projectsEmptyTitle: 'No projects',
             projectsEmptyDescription:
                 'No projects are available in this category.',
+
+            projectCategoryLead: 'Lead Project',
+            projectCategoryCollaboration: 'Collaborative Project',
+            projectCategorySolution: 'Solution',
+
+            projectStatusDraft: 'Draft',
+            projectStatusPlanning: 'Planning',
+            projectStatusActive: 'In Progress',
+            projectStatusCompleted: 'Completed',
+            projectStatusArchived: 'Archived',
+
+            projectFeatured: 'Featured',
+            projectNoCover: 'No project cover',
+            projectNoSummary: 'No project summary',
+            projectDate: 'Project date',
+            projectRole: 'Role',
+            projectUnfilled: 'Not specified',
+            projectView: 'View Project'
         },
 
         'en-GB': {
@@ -125,22 +189,29 @@
             gallery: 'Gallery',
             videos: 'Videos',
             about: 'About',
+
             chooseLanguage: 'Choose a language',
             languageDescription:
                 'Choose the language used by the website interface.',
             currentChoice: 'Current selection',
-            searchPlaceholder: 'Search articles...',
+
+            searchPlaceholder: 'Search articles…',
             searchLabel: 'Search',
             closeSearchLabel: 'Close search',
             tagsLabel: 'View tags',
-            themeLabel: 'Toggle theme',
-            updateSortLabel: 'Sort by last update',
+            themeLabel: 'Switch theme',
+
             recentUpdates: 'Recent Updates',
+            sortByUpdate: 'Sort by last update',
+
             searchGoBack: 'Go Back',
-            searchEmptyPrompt: 'Enter a search term in the search box above.',
+            searchEmptyPrompt:
+                'Enter a search term in the search box above.',
             searchingFor: 'Searching for:',
             searchNoResultsTitle: 'No results found',
-            searchNoResultsDescription: 'Try searching with different keywords',
+            searchNoResultsDescription:
+                'Try searching with different keywords',
+
             projectsPageTitle: 'Projects & Solutions',
             projectsPageDescription:
                 'Projects I led or participated in, together with reusable solutions developed through practical experience.',
@@ -148,9 +219,27 @@
             projectsLead: 'Lead Projects',
             projectsCollaboration: 'Collaborative Projects',
             projectsSolutions: 'Solutions',
-            projectsEmptyTitle: 'No Projects Yet',
+            projectsEmptyTitle: 'No projects',
             projectsEmptyDescription:
-                'No projects are currently available in this category.'
+                'No projects are available in this category.',
+
+            projectCategoryLead: 'Lead Project',
+            projectCategoryCollaboration: 'Collaborative Project',
+            projectCategorySolution: 'Solution',
+
+            projectStatusDraft: 'Draft',
+            projectStatusPlanning: 'Planning',
+            projectStatusActive: 'In Progress',
+            projectStatusCompleted: 'Completed',
+            projectStatusArchived: 'Archived',
+
+            projectFeatured: 'Featured',
+            projectNoCover: 'No project cover',
+            projectNoSummary: 'No project summary',
+            projectDate: 'Project date',
+            projectRole: 'Role',
+            projectUnfilled: 'Not specified',
+            projectView: 'View Project'
         },
 
         es: {
@@ -161,22 +250,29 @@
             gallery: 'Galería',
             videos: 'Vídeos',
             about: 'Acerca de',
+
             chooseLanguage: 'Elegir idioma',
             languageDescription:
                 'Elige el idioma de la interfaz del sitio web.',
             currentChoice: 'Selección actual',
-            searchPlaceholder: 'Buscar artículos...',
+
+            searchPlaceholder: 'Buscar artículos…',
             searchLabel: 'Buscar',
             closeSearchLabel: 'Cerrar búsqueda',
             tagsLabel: 'Ver etiquetas',
             themeLabel: 'Cambiar tema',
-            updateSortLabel: 'Ordenar por actualización',
+
             recentUpdates: 'Actualizaciones recientes',
+            sortByUpdate: 'Ordenar por actualización',
+
             searchGoBack: 'Volver',
-            searchEmptyPrompt: 'Introduce un término de búsqueda en el cuadro de arriba.',
+            searchEmptyPrompt:
+                'Introduce un término de búsqueda en el cuadro de arriba.',
             searchingFor: 'Buscando:',
             searchNoResultsTitle: 'No se encontraron resultados',
-            searchNoResultsDescription: 'Prueba a buscar con otras palabras clave',
+            searchNoResultsDescription:
+                'Prueba con otras palabras clave',
+
             projectsPageTitle: 'Proyectos y soluciones',
             projectsPageDescription:
                 'Proyectos que dirigí o en los que participé, junto con soluciones reutilizables desarrolladas mediante la experiencia práctica.',
@@ -186,7 +282,25 @@
             projectsSolutions: 'Soluciones',
             projectsEmptyTitle: 'No hay proyectos',
             projectsEmptyDescription:
-                'No hay proyectos disponibles actualmente en esta categoría.'
+                'No hay proyectos disponibles en esta categoría.',
+
+            projectCategoryLead: 'Proyecto liderado',
+            projectCategoryCollaboration: 'Proyecto colaborativo',
+            projectCategorySolution: 'Solución',
+
+            projectStatusDraft: 'Borrador',
+            projectStatusPlanning: 'Planificación',
+            projectStatusActive: 'En curso',
+            projectStatusCompleted: 'Completado',
+            projectStatusArchived: 'Archivado',
+
+            projectFeatured: 'Destacado',
+            projectNoCover: 'Sin portada del proyecto',
+            projectNoSummary: 'Sin resumen del proyecto',
+            projectDate: 'Fecha del proyecto',
+            projectRole: 'Función',
+            projectUnfilled: 'Sin especificar',
+            projectView: 'Ver proyecto'
         },
 
         pt: {
@@ -197,22 +311,29 @@
             gallery: 'Galeria',
             videos: 'Vídeos',
             about: 'Sobre',
+
             chooseLanguage: 'Escolher idioma',
             languageDescription:
-                'Escolha o idioma da interface do site.',
+                'Escolha o idioma utilizado na interface do site.',
             currentChoice: 'Seleção atual',
-            searchPlaceholder: 'Pesquisar artigos...',
+
+            searchPlaceholder: 'Pesquisar artigos…',
             searchLabel: 'Pesquisar',
             closeSearchLabel: 'Fechar pesquisa',
             tagsLabel: 'Ver etiquetas',
-            themeLabel: 'Alternar tema',
-            updateSortLabel: 'Ordenar por atualização',
+            themeLabel: 'Mudar tema',
+
             recentUpdates: 'Atualizações recentes',
+            sortByUpdate: 'Ordenar por atualização',
+
             searchGoBack: 'Voltar',
-            searchEmptyPrompt: 'Introduza um termo de pesquisa na caixa acima.',
+            searchEmptyPrompt:
+                'Introduza um termo de pesquisa na caixa acima.',
             searchingFor: 'A pesquisar:',
             searchNoResultsTitle: 'Nenhum resultado encontrado',
-            searchNoResultsDescription: 'Tente pesquisar com outras palavras-chave',
+            searchNoResultsDescription:
+                'Tente pesquisar com outras palavras-chave',
+
             projectsPageTitle: 'Projetos e soluções',
             projectsPageDescription:
                 'Projetos que liderei ou em que participei, juntamente com soluções reutilizáveis desenvolvidas através da experiência prática.',
@@ -220,9 +341,27 @@
             projectsLead: 'Projetos liderados',
             projectsCollaboration: 'Projetos colaborativos',
             projectsSolutions: 'Soluções',
-            projectsEmptyTitle: 'Nenhum projeto',
+            projectsEmptyTitle: 'Sem projetos',
             projectsEmptyDescription:
-                'Não existem projetos disponíveis nesta categoria neste momento.'
+                'Não existem projetos disponíveis nesta categoria.',
+
+            projectCategoryLead: 'Projeto liderado',
+            projectCategoryCollaboration: 'Projeto colaborativo',
+            projectCategorySolution: 'Solução',
+
+            projectStatusDraft: 'Rascunho',
+            projectStatusPlanning: 'Em planeamento',
+            projectStatusActive: 'Em curso',
+            projectStatusCompleted: 'Concluído',
+            projectStatusArchived: 'Arquivado',
+
+            projectFeatured: 'Destaque',
+            projectNoCover: 'Sem capa do projeto',
+            projectNoSummary: 'Sem resumo do projeto',
+            projectDate: 'Data do projeto',
+            projectRole: 'Função',
+            projectUnfilled: 'Não especificado',
+            projectView: 'Ver projeto'
         },
 
         de: {
@@ -233,22 +372,28 @@
             gallery: 'Galerie',
             videos: 'Videos',
             about: 'Über mich',
-            chooseLanguage: 'Sprache wählen',
+
+            chooseLanguage: 'Sprache auswählen',
             languageDescription:
                 'Wähle die Sprache der Website-Oberfläche.',
             currentChoice: 'Aktuelle Auswahl',
-            searchPlaceholder: 'Artikel suchen...',
+
+            searchPlaceholder: 'Artikel durchsuchen…',
             searchLabel: 'Suchen',
             closeSearchLabel: 'Suche schließen',
-            tagsLabel: 'Schlagwörter anzeigen',
+            tagsLabel: 'Tags anzeigen',
             themeLabel: 'Design wechseln',
-            updateSortLabel: 'Nach Aktualisierung sortieren',
+
             recentUpdates: 'Neueste Aktualisierungen',
+            sortByUpdate: 'Nach Aktualisierung sortieren',
+
             searchGoBack: 'Zurück',
             searchEmptyPrompt: 'Gib oben einen Suchbegriff ein.',
             searchingFor: 'Suche nach:',
             searchNoResultsTitle: 'Keine Ergebnisse gefunden',
-            searchNoResultsDescription: 'Versuche es mit anderen Suchbegriffen',
+            searchNoResultsDescription:
+                'Versuche es mit anderen Suchbegriffen',
+
             projectsPageTitle: 'Projekte und Lösungen',
             projectsPageDescription:
                 'Projekte, die ich geleitet oder an denen ich mitgewirkt habe, sowie wiederverwendbare Lösungen aus praktischer Erfahrung.',
@@ -256,9 +401,27 @@
             projectsLead: 'Geleitete Projekte',
             projectsCollaboration: 'Gemeinschaftsprojekte',
             projectsSolutions: 'Lösungen',
-            projectsEmptyTitle: 'Keine Projekte vorhanden',
+            projectsEmptyTitle: 'Keine Projekte',
             projectsEmptyDescription:
-                'In dieser Kategorie sind derzeit keine Projekte verfügbar.'
+                'In dieser Kategorie sind keine Projekte verfügbar.',
+
+            projectCategoryLead: 'Geleitetes Projekt',
+            projectCategoryCollaboration: 'Gemeinschaftsprojekt',
+            projectCategorySolution: 'Lösung',
+
+            projectStatusDraft: 'Entwurf',
+            projectStatusPlanning: 'In Planung',
+            projectStatusActive: 'In Bearbeitung',
+            projectStatusCompleted: 'Abgeschlossen',
+            projectStatusArchived: 'Archiviert',
+
+            projectFeatured: 'Hervorgehoben',
+            projectNoCover: 'Kein Projektbild',
+            projectNoSummary: 'Keine Projektzusammenfassung',
+            projectDate: 'Projektdatum',
+            projectRole: 'Rolle',
+            projectUnfilled: 'Nicht angegeben',
+            projectView: 'Projekt ansehen'
         },
 
         fr: {
@@ -269,22 +432,29 @@
             gallery: 'Galerie',
             videos: 'Vidéos',
             about: 'À propos',
+
             chooseLanguage: 'Choisir une langue',
             languageDescription:
                 'Choisissez la langue de l’interface du site.',
             currentChoice: 'Sélection actuelle',
-            searchPlaceholder: 'Rechercher des articles...',
+
+            searchPlaceholder: 'Rechercher des articles…',
             searchLabel: 'Rechercher',
             closeSearchLabel: 'Fermer la recherche',
             tagsLabel: 'Voir les étiquettes',
             themeLabel: 'Changer de thème',
-            updateSortLabel: 'Trier par mise à jour',
+
             recentUpdates: 'Mises à jour récentes',
+            sortByUpdate: 'Trier par mise à jour',
+
             searchGoBack: 'Retour',
-            searchEmptyPrompt: 'Saisissez un terme dans le champ de recherche ci-dessus.',
-            searchingFor: 'Recherche :',
+            searchEmptyPrompt:
+                'Saisissez un terme de recherche dans le champ ci-dessus.',
+            searchingFor: 'Recherche de :',
             searchNoResultsTitle: 'Aucun résultat trouvé',
-            searchNoResultsDescription: 'Essayez avec d’autres mots-clés',
+            searchNoResultsDescription:
+                'Essayez avec d’autres mots-clés',
+
             projectsPageTitle: 'Projets et solutions',
             projectsPageDescription:
                 'Projets que j’ai dirigés ou auxquels j’ai participé, ainsi que des solutions réutilisables issues de l’expérience pratique.',
@@ -294,7 +464,25 @@
             projectsSolutions: 'Solutions',
             projectsEmptyTitle: 'Aucun projet',
             projectsEmptyDescription:
-                'Aucun projet n’est actuellement disponible dans cette catégorie.'
+                'Aucun projet n’est disponible dans cette catégorie.',
+
+            projectCategoryLead: 'Projet dirigé',
+            projectCategoryCollaboration: 'Projet collaboratif',
+            projectCategorySolution: 'Solution',
+
+            projectStatusDraft: 'Brouillon',
+            projectStatusPlanning: 'Planification',
+            projectStatusActive: 'En cours',
+            projectStatusCompleted: 'Terminé',
+            projectStatusArchived: 'Archivé',
+
+            projectFeatured: 'À la une',
+            projectNoCover: 'Aucune image de projet',
+            projectNoSummary: 'Aucun résumé de projet',
+            projectDate: 'Date du projet',
+            projectRole: 'Rôle',
+            projectUnfilled: 'Non renseigné',
+            projectView: 'Voir le projet'
         },
 
         ru: {
@@ -305,22 +493,29 @@
             gallery: 'Галерея',
             videos: 'Видео',
             about: 'Обо мне',
+
             chooseLanguage: 'Выберите язык',
             languageDescription:
                 'Выберите язык интерфейса сайта.',
             currentChoice: 'Текущий выбор',
-            searchPlaceholder: 'Поиск статей...',
+
+            searchPlaceholder: 'Поиск статей…',
             searchLabel: 'Поиск',
             closeSearchLabel: 'Закрыть поиск',
-            tagsLabel: 'Показать теги',
+            tagsLabel: 'Посмотреть теги',
             themeLabel: 'Сменить тему',
-            updateSortLabel: 'Сортировать по обновлению',
+
             recentUpdates: 'Последние обновления',
+            sortByUpdate: 'Сортировать по обновлению',
+
             searchGoBack: 'Назад',
-            searchEmptyPrompt: 'Введите поисковый запрос в поле выше.',
+            searchEmptyPrompt:
+                'Введите поисковый запрос в поле выше.',
             searchingFor: 'Поиск:',
             searchNoResultsTitle: 'Ничего не найдено',
-            searchNoResultsDescription: 'Попробуйте использовать другие ключевые слова',
+            searchNoResultsDescription:
+                'Попробуйте использовать другие ключевые слова',
+
             projectsPageTitle: 'Проекты и решения',
             projectsPageDescription:
                 'Проекты, которыми я руководил или в которых участвовал, а также решения, созданные на основе практического опыта.',
@@ -328,78 +523,121 @@
             projectsLead: 'Проекты под моим руководством',
             projectsCollaboration: 'Совместные проекты',
             projectsSolutions: 'Решения',
-            projectsEmptyTitle: 'Проектов пока нет',
+            projectsEmptyTitle: 'Нет проектов',
             projectsEmptyDescription:
-                'В этой категории пока нет доступных проектов.'
+                'В этой категории пока нет доступных проектов.',
+
+            projectCategoryLead: 'Проект под моим руководством',
+            projectCategoryCollaboration: 'Совместный проект',
+            projectCategorySolution: 'Решение',
+
+            projectStatusDraft: 'Черновик',
+            projectStatusPlanning: 'Планирование',
+            projectStatusActive: 'В процессе',
+            projectStatusCompleted: 'Завершён',
+            projectStatusArchived: 'В архиве',
+
+            projectFeatured: 'Избранное',
+            projectNoCover: 'Нет обложки проекта',
+            projectNoSummary: 'Нет описания проекта',
+            projectDate: 'Дата проекта',
+            projectRole: 'Роль',
+            projectUnfilled: 'Не указано',
+            projectView: 'Открыть проект'
         }
     };
 
     function mergeEnglishConfig(config) {
-        const current =
-            translations['en-US'];
+        const current = translations['en-US'];
 
-        const navigation =
-            config.navigation || {};
+        if (!current || !config) {
+            return;
+        }
 
-        const languageSelector =
-            config.languageSelector || {};
-
-        const home =
-            config.home || {};
-
-        const searchPage =
-            config.searchPage || {};
+        const navigation = config.navigation || {};
+        const languageSelector = config.languageSelector || {};
+        const homeConfig = config.home || {};
+        const searchPage = config.searchPage || {};
+        const projectsConfig = config.projects || {};
 
         translations['en-US'] = {
             ...current,
-            home:
-                navigation.home ||
-                current.home,
-            articles:
-                navigation.articles ||
-                current.articles,
-            resume:
-                navigation.resume ||
-                current.resume,
-            projects:
-                navigation.projects ||
-                current.projects,
-            gallery:
-                navigation.gallery ||
-                current.gallery,
-            videos:
-                navigation.videos ||
-                current.videos,
-            about:
-                navigation.about ||
-                current.about,
+
+            home: navigation.home || current.home,
+            articles: navigation.articles || current.articles,
+            resume: navigation.resume || current.resume,
+            projects: navigation.projects || current.projects,
+            gallery: navigation.gallery || current.gallery,
+            videos: navigation.videos || current.videos,
+            about: navigation.about || current.about,
+
             chooseLanguage:
                 languageSelector.title ||
                 current.chooseLanguage,
+
             languageDescription:
                 languageSelector.description ||
                 current.languageDescription,
+
             currentChoice:
                 languageSelector.currentSelection ||
                 current.currentChoice,
+
             recentUpdates:
-                home.recentUpdates ||
+                homeConfig.recentUpdates ||
                 current.recentUpdates,
+
             searchGoBack:
                 searchPage.goBack ||
                 current.searchGoBack,
+
             searchEmptyPrompt:
                 searchPage.emptyPrompt ||
                 current.searchEmptyPrompt,
+
             searchingFor:
                 searchPage.searchingFor ||
                 current.searchingFor,
+
             searchNoResultsTitle:
                 searchPage.noResultsTitle ||
                 current.searchNoResultsTitle,
+
             searchNoResultsDescription:
                 searchPage.noResultsDescription ||
-                current.searchNoResultsDescription
+                current.searchNoResultsDescription,
+
+            projectsPageTitle:
+                projectsConfig.pageTitle ||
+                current.projectsPageTitle,
+
+            projectsPageDescription:
+                projectsConfig.pageDescription ||
+                current.projectsPageDescription,
+
+            projectsAll:
+                projectsConfig.all ||
+                current.projectsAll,
+
+            projectsLead:
+                projectsConfig.lead ||
+                current.projectsLead,
+
+            projectsCollaboration:
+                projectsConfig.collaboration ||
+                current.projectsCollaboration,
+
+            projectsSolutions:
+                projectsConfig.solutions ||
+                current.projectsSolutions,
+
+            projectsEmptyDescription:
+                projectsConfig.empty ||
+                current.projectsEmptyDescription,
+
+            projectView:
+                projectsConfig.viewProject ||
+                current.projectView
         };
     }
 
@@ -418,8 +656,7 @@
                 );
             }
 
-            const config =
-                await response.json();
+            const config = await response.json();
 
             mergeEnglishConfig(config);
         } catch (error) {
@@ -430,20 +667,12 @@
         }
     }
 
-    
     function getSavedLanguage() {
         try {
-            const savedLanguage =
-                localStorage.getItem(STORAGE_KEY);
-
-            if (
-                savedLanguage &&
-                translations[savedLanguage]
-            ) {
-                return savedLanguage;
-            }
-
-            return DEFAULT_LANGUAGE;
+            return (
+                localStorage.getItem(STORAGE_KEY) ||
+                DEFAULT_LANGUAGE
+            );
         } catch (error) {
             return DEFAULT_LANGUAGE;
         }
@@ -456,428 +685,524 @@
                 languageCode
             );
         } catch (error) {
-            /*
-             * 某些浏览器可能禁止本地存储。
-             * 即使保存失败，本次页面仍可正常切换语言。
-             */
+            console.warn(
+                'Unable to save language preference.',
+                error
+            );
         }
     }
 
-    function setText(selector, value) {
-        const element =
-            document.querySelector(selector);
+    function getSafeLanguage(languageCode) {
+        if (translations[languageCode]) {
+            return languageCode;
+        }
 
-        if (element && value) {
+        return DEFAULT_LANGUAGE;
+    }
+
+    function setText(selector, value) {
+        if (!value) {
+            return;
+        }
+
+        const element = document.querySelector(selector);
+
+        if (element) {
             element.textContent = value;
         }
     }
 
-    function setAttribute(
-        selector,
-        attribute,
-        value
-    ) {
-        const element =
-            document.querySelector(selector);
+    function setAllText(selector, value) {
+        if (!value) {
+            return;
+        }
 
-        if (element && value) {
-            element.setAttribute(
-                attribute,
-                value
-            );
+        document.querySelectorAll(selector).forEach(
+            (element) => {
+                element.textContent = value;
+            }
+        );
+    }
+
+    function setAttribute(selector, name, value) {
+        if (!value) {
+            return;
+        }
+
+        const element = document.querySelector(selector);
+
+        if (element) {
+            element.setAttribute(name, value);
         }
     }
 
-    function getLanguageName(languageCode) {
-        const card = document.querySelector(
-            `[data-language="${languageCode}"]`
-        );
-
-        if (!card) {
-            return languageCode;
+    function setAllAttributes(selector, name, value) {
+        if (!value) {
+            return;
         }
 
-        return (
-            card.dataset.languageName ||
-            languageCode
+        document.querySelectorAll(selector).forEach(
+            (element) => {
+                element.setAttribute(name, value);
+            }
         );
     }
 
     function applyDirection(languageCode) {
-        document.documentElement.lang =
-            languageCode;
-
-        document.documentElement.setAttribute(
-            'dir',
-            'ltr'
-        );
+        document.documentElement.lang = languageCode;
+        document.documentElement.setAttribute('dir', 'ltr');
 
         if (document.body) {
             document.body.removeAttribute('dir');
-            document.body.classList.remove(
-                'freecat-rtl'
-            );
+            document.body.classList.remove('freecat-rtl');
         }
     }
 
     function applyNavigation(dictionary) {
-        setText(
-            '#nav-links a[href="/"]',
-            dictionary.home
-        );
-
-        setText(
-            '#nav-links a[href="/all"]',
-            dictionary.articles
-        );
-
-        setText(
-            '#nav-links a[href="/resume"]',
-            dictionary.resume
-        );
-
-        setText(
-            '#nav-links a[href="/projects"]',
-            dictionary.projects
-        );
-
-        setText(
-            '#nav-links a[href="/gallery"]',
-            dictionary.gallery
-        );
-
-        setText(
-            '#nav-links a[href="/videos"]',
-            dictionary.videos
-        );
-
-        setText(
-            '#nav-links a[href="/about"]',
-            dictionary.about
-        );
-
-        const navigation =
-            document.getElementById('nav-links');
-
-        if (navigation) {
-            navigation.setAttribute(
-                'dir',
-                'ltr'
-            );
-        }
+        setText('[data-i18n="home"]', dictionary.home);
+        setText('[data-i18n="articles"]', dictionary.articles);
+        setText('[data-i18n="resume"]', dictionary.resume);
+        setText('[data-i18n="projects"]', dictionary.projects);
+        setText('[data-i18n="gallery"]', dictionary.gallery);
+        setText('[data-i18n="videos"]', dictionary.videos);
+        setText('[data-i18n="about"]', dictionary.about);
     }
 
     function applyLanguagePanel(
         languageCode,
         dictionary
     ) {
-        const menu =
-            document.getElementById(
-                'language-menu'
+        setText(
+            '[data-language-panel-title]',
+            dictionary.chooseLanguage
+        );
+
+        setText(
+            '[data-language-panel-description]',
+            dictionary.languageDescription
+        );
+
+        const currentLanguageElement =
+            document.querySelector(
+                '[data-language-current]'
             );
 
-        if (!menu) {
-            return;
-        }
+        if (currentLanguageElement) {
+            const selectedCard =
+                document.querySelector(
+                    `[data-language-code="${languageCode}"]`
+                );
 
-        /*
-         * 菜单保持左到右排列，避免阿拉伯语选中后
-         * 整个语言卡片面板镜像移动。
-         */
-        menu.setAttribute('dir', 'ltr');
+            const selectedName =
+                selectedCard?.querySelector(
+                    '[data-language-name]'
+                )?.textContent?.trim() ||
+                languageCode;
 
-        const panelTitle =
-            menu.querySelector('div h2');
-
-        const panelDescription =
-            menu.querySelector('div h2 + p');
-
-        const status =
-            document.getElementById(
-                'language-selection-status'
-            );
-
-        if (panelTitle) {
-            panelTitle.textContent =
-                dictionary.chooseLanguage;
-
-            panelTitle.setAttribute(
-                'dir',
-                languageCode === 'ar'
-                    ? 'rtl'
-                    : 'ltr'
-            );
-        }
-
-        if (panelDescription) {
-            panelDescription.textContent =
-                dictionary.languageDescription;
-
-            panelDescription.setAttribute(
-                'dir',
-                languageCode === 'ar'
-                    ? 'rtl'
-                    : 'ltr'
-            );
-        }
-
-        if (status) {
-            status.textContent =
-                `${dictionary.currentChoice}: ` +
-                getLanguageName(languageCode);
-
-            status.setAttribute(
-                'dir',
-                languageCode === 'ar'
-                    ? 'rtl'
-                    : 'ltr'
-            );
+            currentLanguageElement.textContent =
+                `${dictionary.currentChoice}: ${selectedName}`;
         }
     }
 
     function applyControls(dictionary) {
-        setAttribute(
-            '#search-toggle',
+        const searchInput =
+            document.querySelector(
+                '[data-header-search-input]'
+            );
+
+        if (searchInput) {
+            searchInput.placeholder =
+                dictionary.searchPlaceholder;
+        }
+
+        setAllAttributes(
+            '[data-search-open]',
             'aria-label',
             dictionary.searchLabel
         );
 
-        setAttribute(
-            '#search-close',
+        setAllAttributes(
+            '[data-search-close]',
             'aria-label',
             dictionary.closeSearchLabel
         );
 
-        setAttribute(
-            '#tag-menu-toggle',
+        setAllAttributes(
+            '[data-tags-button]',
             'aria-label',
             dictionary.tagsLabel
         );
 
-        setAttribute(
-            '#theme-toggle',
+        setAllAttributes(
+            '[data-theme-toggle]',
             'aria-label',
             dictionary.themeLabel
         );
+    }
 
-        setAttribute(
-            '#update-sort-switch',
-            'aria-label',
-            dictionary.updateSortLabel
+    function applyProjectCardTranslations(dictionary) {
+        const categoryMap = {
+            lead: dictionary.projectCategoryLead,
+            collaboration:
+                dictionary.projectCategoryCollaboration,
+            solution:
+                dictionary.projectCategorySolution
+        };
+
+        const statusMap = {
+            draft: dictionary.projectStatusDraft,
+            planning: dictionary.projectStatusPlanning,
+            active: dictionary.projectStatusActive,
+            completed: dictionary.projectStatusCompleted,
+            archived: dictionary.projectStatusArchived
+        };
+
+        document.querySelectorAll(
+            '[data-project-category-label]'
+        ).forEach((element) => {
+            const category = (
+                element.getAttribute(
+                    'data-project-category-label'
+                ) || ''
+            ).trim().toLowerCase();
+
+            element.textContent =
+                categoryMap[category] ||
+                category ||
+                dictionary.projectUnfilled;
+        });
+
+        document.querySelectorAll(
+            '[data-project-status-label]'
+        ).forEach((element) => {
+            const status = (
+                element.getAttribute(
+                    'data-project-status-label'
+                ) || ''
+            ).trim().toLowerCase();
+
+            element.textContent =
+                statusMap[status] ||
+                status ||
+                dictionary.projectUnfilled;
+        });
+
+        setAllText(
+            '[data-project-featured-label]',
+            dictionary.projectFeatured
         );
 
-        setText(
-            '#update-sort-label',
-            dictionary.updateSortLabel
+        setAllText(
+            '[data-project-no-cover-label]',
+            dictionary.projectNoCover
         );
-        
-        setAttribute(
-            '#search-input',
-            'placeholder',
-            dictionary.searchPlaceholder
+
+        setAllText(
+            '[data-project-no-summary-label]',
+            dictionary.projectNoSummary
+        );
+
+        setAllText(
+            '[data-project-date-label]',
+            dictionary.projectDate
+        );
+
+        setAllText(
+            '[data-project-role-label]',
+            dictionary.projectRole
+        );
+
+        setAllText(
+            '[data-project-unfilled-label]',
+            dictionary.projectUnfilled
+        );
+
+        setAllText(
+            '[data-project-view-label]',
+            dictionary.projectView
         );
     }
 
     function updateSelectedCard(languageCode) {
-        const languageCards =
-            document.querySelectorAll(
-                '[data-language]'
-            );
+        document.querySelectorAll(
+            '[data-language-code]'
+        ).forEach((card) => {
+            const isSelected =
+                card.getAttribute(
+                    'data-language-code'
+                ) === languageCode;
 
-        languageCards.forEach((card) => {
-            const selected =
-                card.dataset.language ===
-                languageCode;
+            card.classList.toggle(
+                'is-selected',
+                isSelected
+            );
 
             card.setAttribute(
-                'aria-current',
-                selected ? 'true' : 'false'
-            );
-
-            card.classList.toggle(
-                'border-primary',
-                selected
-            );
-
-            card.classList.toggle(
-                'bg-emerald-50',
-                selected
-            );
-
-            card.classList.toggle(
-                'dark:bg-emerald-950/30',
-                selected
+                'aria-selected',
+                String(isSelected)
             );
         });
     }
 
     function applyLanguage(languageCode) {
-    const safeLanguageCode =
-        translations[languageCode]
-            ? languageCode
-            : DEFAULT_LANGUAGE;
+        const safeLanguageCode =
+            getSafeLanguage(languageCode);
 
-    /*
-     * 先以简体中文作为公共后备字典，
-     * 再覆盖当前语言已有的翻译。
-     *
-     * 这样尚未补齐项目页翻译的语言，
-     * 不会出现 undefined 或空白文字。
-     */
-    const dictionary = {
-        ...translations[DEFAULT_LANGUAGE],
-        ...translations[safeLanguageCode]
-    };
+        const dictionary =
+            translations[safeLanguageCode];
 
-    applyDirection(safeLanguageCode);
-    applyNavigation(dictionary);
+        applyDirection(safeLanguageCode);
+        applyNavigation(dictionary);
 
-    applyLanguagePanel(
-        safeLanguageCode,
-        dictionary
-    );
+        applyLanguagePanel(
+            safeLanguageCode,
+            dictionary
+        );
 
-    applyControls(dictionary);
+        applyControls(dictionary);
 
-    /*
-     * 首页侧栏
-     */
-    setText(
-        '#recent-updates-heading',
-        dictionary.recentUpdates
-    );
+        setText(
+            '#recent-updates-heading',
+            dictionary.recentUpdates
+        );
 
-    /*
-     * 搜索页面
-     */
-    setText(
-        '#search-go-back',
-        dictionary.searchGoBack
-    );
+        setText(
+            '#search-go-back',
+            dictionary.searchGoBack
+        );
 
-    setText(
-        '#search-empty-prompt',
-        dictionary.searchEmptyPrompt
-    );
+        setText(
+            '#search-empty-prompt',
+            dictionary.searchEmptyPrompt
+        );
 
-    setText(
-        '#searching-for-label',
-        dictionary.searchingFor
-    );
+        setText(
+            '#searching-for-label',
+            dictionary.searchingFor
+        );
 
-    setText(
-        '#search-no-results-title',
-        dictionary.searchNoResultsTitle
-    );
+        setText(
+            '#search-no-results-title',
+            dictionary.searchNoResultsTitle
+        );
 
-    setText(
-        '#search-no-results-description',
-        dictionary.searchNoResultsDescription
-    );
+        setText(
+            '#search-no-results-description',
+            dictionary.searchNoResultsDescription
+        );
 
-    /*
-     * 项目列表页面
-     */
-    setText(
-        '#projects-page-title',
-        dictionary.projectsPageTitle
-    );
+        setText(
+            '#update-sort-label',
+            dictionary.sortByUpdate
+        );
 
-    setText(
-        '#projects-page-description',
-        dictionary.projectsPageDescription
-    );
+        setAttribute(
+            '[data-update-sort-switch]',
+            'aria-label',
+            dictionary.sortByUpdate
+        );
 
-    setText(
-        '#projects-filter-all',
-        dictionary.projectsAll
-    );
+        setText(
+            '#projects-page-title',
+            dictionary.projectsPageTitle
+        );
 
-    setText(
-        '#projects-filter-lead',
-        dictionary.projectsLead
-    );
+        setText(
+            '#projects-page-description',
+            dictionary.projectsPageDescription
+        );
 
-    setText(
-        '#projects-filter-collaboration',
-        dictionary.projectsCollaboration
-    );
+        setText(
+            '#projects-filter-all',
+            dictionary.projectsAll
+        );
 
-    setText(
-        '#projects-filter-solutions',
-        dictionary.projectsSolutions
-    );
+        setText(
+            '#projects-filter-lead',
+            dictionary.projectsLead
+        );
 
-    setText(
-        '#projects-empty-title',
-        dictionary.projectsEmptyTitle
-    );
+        setText(
+            '#projects-filter-collaboration',
+            dictionary.projectsCollaboration
+        );
 
-    setText(
-        '#projects-empty-description',
-        dictionary.projectsEmptyDescription
-    );
+        setText(
+            '#projects-filter-solutions',
+            dictionary.projectsSolutions
+        );
 
-    updateSelectedCard(
-        safeLanguageCode
-    );
+        setText(
+            '#projects-empty-title',
+            dictionary.projectsEmptyTitle
+        );
 
-    document.dispatchEvent(
-        new CustomEvent(
-            'freecat:language-changed',
-            {
-                detail: {
-                    language:
-                        safeLanguageCode
+        setText(
+            '#projects-empty-description',
+            dictionary.projectsEmptyDescription
+        );
+
+        applyProjectCardTranslations(dictionary);
+        updateSelectedCard(safeLanguageCode);
+        saveLanguage(safeLanguageCode);
+
+        window.dispatchEvent(
+            new CustomEvent(
+                'freecat:languagechange',
+                {
+                    detail: {
+                        language:
+                            safeLanguageCode,
+                        dictionary
+                    }
                 }
-            }
-        )
-    );
-}
-    
-        function observeDynamicContent() {
-        if (
-            dynamicTranslationObserver ||
-            !document.body
-        ) {
+            )
+        );
+    }
+
+    function closeLanguagePanel() {
+        const panel =
+            document.querySelector(
+                '[data-language-panel]'
+            );
+
+        const toggle =
+            document.querySelector(
+                '[data-language-toggle]'
+            );
+
+        if (panel) {
+            panel.hidden = true;
+        }
+
+        if (toggle) {
+            toggle.setAttribute(
+                'aria-expanded',
+                'false'
+            );
+        }
+    }
+
+    function toggleLanguagePanel() {
+        const panel =
+            document.querySelector(
+                '[data-language-panel]'
+            );
+
+        const toggle =
+            document.querySelector(
+                '[data-language-toggle]'
+            );
+
+        if (!panel || !toggle) {
             return;
         }
 
-        dynamicTranslationObserver =
-            new MutationObserver((mutations) => {
-                const hasNewContent =
+        const willOpen = panel.hidden;
+
+        panel.hidden = !willOpen;
+
+        toggle.setAttribute(
+            'aria-expanded',
+            String(willOpen)
+        );
+    }
+
+    function bindLanguageControls() {
+        const toggle =
+            document.querySelector(
+                '[data-language-toggle]'
+            );
+
+        const panel =
+            document.querySelector(
+                '[data-language-panel]'
+            );
+
+        if (toggle) {
+            toggle.addEventListener(
+                'click',
+                (event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    toggleLanguagePanel();
+                }
+            );
+        }
+
+        document.querySelectorAll(
+            '[data-language-code]'
+        ).forEach((card) => {
+            card.addEventListener(
+                'click',
+                () => {
+                    const languageCode =
+                        card.getAttribute(
+                            'data-language-code'
+                        );
+
+                    applyLanguage(languageCode);
+                    closeLanguagePanel();
+                }
+            );
+        });
+
+        document.addEventListener(
+            'click',
+            (event) => {
+                if (
+                    panel &&
+                    !panel.hidden &&
+                    !panel.contains(event.target) &&
+                    !toggle?.contains(event.target)
+                ) {
+                    closeLanguagePanel();
+                }
+            }
+        );
+
+        document.addEventListener(
+            'keydown',
+            (event) => {
+                if (event.key === 'Escape') {
+                    closeLanguagePanel();
+                }
+            }
+        );
+    }
+
+    function observeDynamicContent() {
+        if (!document.body) {
+            return;
+        }
+
+        const observer = new MutationObserver(
+            (mutations) => {
+                const hasAddedNodes =
                     mutations.some(
                         (mutation) =>
                             mutation.addedNodes.length > 0
                     );
 
-                if (!hasNewContent) {
+                if (!hasAddedNodes) {
                     return;
                 }
 
-                window.clearTimeout(
-                    dynamicTranslationTimer
+                const languageCode =
+                    getSafeLanguage(
+                        getSavedLanguage()
+                    );
+
+                const dictionary =
+                    translations[languageCode];
+
+                applyProjectCardTranslations(
+                    dictionary
                 );
+            }
+        );
 
-                dynamicTranslationTimer =
-                    window.setTimeout(() => {
-                        dynamicTranslationObserver.disconnect();
-
-                        applyLanguage(
-                            getSavedLanguage()
-                        );
-
-                        dynamicTranslationObserver.observe(
-                            document.body,
-                            {
-                                childList: true,
-                                subtree: true
-                            }
-                        );
-                    }, 50);
-            });
-
-        dynamicTranslationObserver.observe(
+        observer.observe(
             document.body,
             {
                 childList: true,
@@ -885,65 +1210,32 @@
             }
         );
     }
-    
-    function handleLanguageClick(event) {
-        const languageCard =
-            event.target.closest(
-                '[data-language]'
-            );
 
-        if (!languageCard) {
-            return;
-        }
-
-        const languageCode =
-            languageCard.dataset.language;
-
-        if (!translations[languageCode]) {
-            return;
-        }
-
-        saveLanguage(languageCode);
-
-        /*
-         * 等 header.html 中的菜单脚本完成后，
-         * 再更新公共界面。
-         */
-        window.setTimeout(() => {
-            applyLanguage(languageCode);
-        }, 0);
-    }
-
-        async function initialiseLanguageSystem() {
+    async function initialiseI18n() {
         await loadExternalTranslations();
 
-        applyLanguage(
-            getSavedLanguage()
-        );
-
+        bindLanguageControls();
+        applyLanguage(getSavedLanguage());
         observeDynamicContent();
-
-        document.addEventListener(
-            'click',
-            handleLanguageClick
-        );
     }
-    
-    if (document.readyState === 'loading') {
+
+    if (
+        document.readyState === 'loading'
+    ) {
         document.addEventListener(
             'DOMContentLoaded',
-            initialiseLanguageSystem,
+            initialiseI18n,
             {
                 once: true
             }
         );
     } else {
-        initialiseLanguageSystem();
+        initialiseI18n();
     }
 
-    window.FreeCatI18n = {
+    window.FreecatI18n = {
         applyLanguage,
-        getLanguage: getSavedLanguage,
+        getSavedLanguage,
         translations
     };
 })();
