@@ -52,93 +52,103 @@
             <div class="mx-auto w-full max-w-[1300px]">
 
                 <!-- 页面标题 -->
-                <section class="mb-10 text-center md:mb-14">
-                    <p
-                        class="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-primary"
-                    >
-                        Projects & Solutions
-                    </p>
+<section class="mb-10 text-center md:mb-14">
+    <p
+        class="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-primary"
+    >
+        Projects &amp; Solutions
+    </p>
 
-                    <h1
-                        class="mb-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl"
-                    >
-                        项目与解决方案
-                    </h1>
+    <h1
+        id="projects-page-title"
+        class="mb-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl"
+    >
+        项目与解决方案
+    </h1>
 
-                    <p
-                        class="mx-auto max-w-3xl text-base leading-8 text-slate-500 dark:text-slate-400"
-                    >
-                        记录我主导和协作参与的项目，以及在实践中整理形成的解决方案。
-                    </p>
-                </section>
+    <p
+        id="projects-page-description"
+        class="mx-auto max-w-3xl text-base leading-8 text-slate-500 dark:text-slate-400"
+    >
+        记录我主导和协作参与的项目，以及在实践中整理形成的解决方案。
+    </p>
+</section>
 
-                <!-- 分类筛选 -->
-                <nav
-                    class="mb-10 flex flex-wrap justify-center gap-3"
-                    aria-label="项目分类"
-                >
-                    <button
-                        type="button"
-                        class="projects-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm text-slate-600 transition hover:border-primary hover:text-primary dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
-                        data-project-filter="all"
-                        aria-pressed="true"
-                    >
-                        全部项目
-                    </button>
+<!-- 分类筛选 -->
+<nav
+    class="mb-10 flex flex-wrap justify-center gap-3"
+    aria-label="项目分类"
+>
+    <button
+        id="projects-filter-all"
+        type="button"
+        class="projects-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm text-slate-600 transition hover:border-primary hover:text-primary dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
+        data-project-filter="all"
+        aria-pressed="true"
+    >
+        全部项目
+    </button>
 
-                    <button
-                        type="button"
-                        class="projects-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm text-slate-600 transition hover:border-primary hover:text-primary dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
-                        data-project-filter="lead"
-                        aria-pressed="false"
-                    >
-                        主导项目
-                    </button>
+    <button
+        id="projects-filter-lead"
+        type="button"
+        class="projects-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm text-slate-600 transition hover:border-primary hover:text-primary dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
+        data-project-filter="lead"
+        aria-pressed="false"
+    >
+        主导项目
+    </button>
 
-                    <button
-                        type="button"
-                        class="projects-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm text-slate-600 transition hover:border-primary hover:text-primary dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
-                        data-project-filter="collaborative"
-                        aria-pressed="false"
-                    >
-                        协作项目
-                    </button>
+    <button
+        id="projects-filter-collaboration"
+        type="button"
+        class="projects-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm text-slate-600 transition hover:border-primary hover:text-primary dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
+        data-project-filter="collaborative"
+        aria-pressed="false"
+    >
+        协作项目
+    </button>
 
-                    <button
-                        type="button"
-                        class="projects-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm text-slate-600 transition hover:border-primary hover:text-primary dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
-                        data-project-filter="solution"
-                        aria-pressed="false"
-                    >
-                        解决方案
-                    </button>
-                </nav>
+    <button
+        id="projects-filter-solutions"
+        type="button"
+        class="projects-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm text-slate-600 transition hover:border-primary hover:text-primary dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
+        data-project-filter="solution"
+        aria-pressed="false"
+    >
+        解决方案
+    </button>
+</nav>
 
-                <!-- 项目卡片 -->
-                <section
-                    id="projects-grid"
-                    class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"
-                    aria-label="项目列表"
-                >
-                    <!-- PROJECTS_ITEMS -->
-                </section>
+<!-- 项目卡片 -->
+<section
+    id="projects-grid"
+    class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"
+    aria-label="项目列表"
+>
+    <!-- PROJECTS_ITEMS -->
+</section>
 
-                <!-- 暂无内容 -->
-                <section
-                    id="projects-empty"
-                    class="hidden rounded-3xl border border-dashed border-slate-300 px-6 py-20 text-center dark:border-slate-700"
-                >
-                    <h2
-                        class="mb-3 text-2xl font-semibold text-slate-800 dark:text-white"
-                    >
-                        暂无项目
-                    </h2>
+<!-- 暂无内容 -->
+<section
+    id="projects-empty"
+    class="hidden rounded-3xl border border-dashed border-slate-300 px-6 py-20 text-center dark:border-slate-700"
+>
+    <h2
+        id="projects-empty-title"
+        class="mb-3 text-2xl font-semibold text-slate-800 dark:text-white"
+    >
+        暂无项目
+    </h2>
 
-                    <p class="text-sm text-slate-500 dark:text-slate-400">
-                        当前分类的内容正在整理中。
-                    </p>
-                </section>
-
+    <p
+        id="projects-empty-description"
+        class="text-sm text-slate-500 dark:text-slate-400"
+    >
+        当前分类的内容正在整理中。
+    </p>
+</section>
+                
             </div>
         </main>
 
