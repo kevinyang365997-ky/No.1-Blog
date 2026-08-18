@@ -60,7 +60,19 @@
             projectDate: '项目时间',
             projectRole: '承担角色',
             projectUnfilled: '未填写',
-            projectView: '查看项目'
+            projectView: '查看项目',
+
+            projectDetailBack: '返回项目列表',
+            projectDetailDate: '项目时间',
+            projectDetailLocation: '项目地点',
+            projectDetailRole: '承担角色',
+            projectDetailUpdated: '最后更新',
+            projectDetailToc: '项目目录',
+            projectDetailRelated: '相关内容',
+            projectDetailRelatedArticles: '相关文章',
+            projectDetailRelatedVideos: '相关视频',
+            projectDetailRelatedImages: '相关图片',
+            projectDetailRelatedProjects: '相关项目'
         },
 
         'zh-TW': {
@@ -117,7 +129,19 @@
             projectDate: '專案時間',
             projectRole: '承擔角色',
             projectUnfilled: '未填寫',
-            projectView: '查看專案'
+            projectView: '查看專案',
+
+            projectDetailBack: '返回專案列表',
+            projectDetailDate: '專案時間',
+            projectDetailLocation: '專案地點',
+            projectDetailRole: '承擔角色',
+            projectDetailUpdated: '最後更新',
+            projectDetailToc: '專案目錄',
+            projectDetailRelated: '相關內容',
+            projectDetailRelatedArticles: '相關文章',
+            projectDetailRelatedVideos: '相關影片',
+            projectDetailRelatedImages: '相關圖片',
+            projectDetailRelatedProjects: '相關專案'
         },
 
         'en-US': {
@@ -178,7 +202,19 @@
             projectDate: 'Project date',
             projectRole: 'Role',
             projectUnfilled: 'Not specified',
-            projectView: 'View Project'
+            projectView: 'View Project',
+
+            projectDetailBack: 'Back to Projects',
+            projectDetailDate: 'Project date',
+            projectDetailLocation: 'Location',
+            projectDetailRole: 'Role',
+            projectDetailUpdated: 'Last updated',
+            projectDetailToc: 'Project contents',
+            projectDetailRelated: 'Related Content',
+            projectDetailRelatedArticles: 'Related Articles',
+            projectDetailRelatedVideos: 'Related Videos',
+            projectDetailRelatedImages: 'Related Images',
+            projectDetailRelatedProjects: 'Related Projects'
         },
 
         'en-GB': {
@@ -239,7 +275,19 @@
             projectDate: 'Project date',
             projectRole: 'Role',
             projectUnfilled: 'Not specified',
-            projectView: 'View Project'
+            projectView: 'View Project',
+
+            projectDetailBack: 'Back to Projects',
+            projectDetailDate: 'Project date',
+            projectDetailLocation: 'Location',
+            projectDetailRole: 'Role',
+            projectDetailUpdated: 'Last updated',
+            projectDetailToc: 'Project contents',
+            projectDetailRelated: 'Related Content',
+            projectDetailRelatedArticles: 'Related Articles',
+            projectDetailRelatedVideos: 'Related Videos',
+            projectDetailRelatedImages: 'Related Images',
+            projectDetailRelatedProjects: 'Related Projects'
         },
 
         es: {
@@ -300,7 +348,19 @@
             projectDate: 'Fecha del proyecto',
             projectRole: 'Función',
             projectUnfilled: 'Sin especificar',
-            projectView: 'Ver proyecto'
+            projectView: 'Ver proyecto',
+
+            projectDetailBack: 'Volver a proyectos',
+            projectDetailDate: 'Fecha del proyecto',
+            projectDetailLocation: 'Ubicación',
+            projectDetailRole: 'Función',
+            projectDetailUpdated: 'Última actualización',
+            projectDetailToc: 'Contenido del proyecto',
+            projectDetailRelated: 'Contenido relacionado',
+            projectDetailRelatedArticles: 'Artículos relacionados',
+            projectDetailRelatedVideos: 'Vídeos relacionados',
+            projectDetailRelatedImages: 'Imágenes relacionadas',
+            projectDetailRelatedProjects: 'Proyectos relacionados'
         },
 
         pt: {
@@ -361,7 +421,19 @@
             projectDate: 'Data do projeto',
             projectRole: 'Função',
             projectUnfilled: 'Não especificado',
-            projectView: 'Ver projeto'
+            projectView: 'Ver projeto',
+
+            projectDetailBack: 'Voltar aos projetos',
+            projectDetailDate: 'Data do projeto',
+            projectDetailLocation: 'Localização',
+            projectDetailRole: 'Função',
+            projectDetailUpdated: 'Última atualização',
+            projectDetailToc: 'Conteúdo do projeto',
+            projectDetailRelated: 'Conteúdo relacionado',
+            projectDetailRelatedArticles: 'Artigos relacionados',
+            projectDetailRelatedVideos: 'Vídeos relacionados',
+            projectDetailRelatedImages: 'Imagens relacionadas',
+            projectDetailRelatedProjects: 'Projetos relacionados'
         },
 
         de: {
@@ -421,7 +493,19 @@
             projectDate: 'Projektdatum',
             projectRole: 'Rolle',
             projectUnfilled: 'Nicht angegeben',
-            projectView: 'Projekt ansehen'
+            projectView: 'Projekt ansehen',
+
+            projectDetailBack: 'Zurück zu den Projekten',
+            projectDetailDate: 'Projektdatum',
+            projectDetailLocation: 'Ort',
+            projectDetailRole: 'Rolle',
+            projectDetailUpdated: 'Zuletzt aktualisiert',
+            projectDetailToc: 'Projektinhalt',
+            projectDetailRelated: 'Verwandte Inhalte',
+            projectDetailRelatedArticles: 'Verwandte Artikel',
+            projectDetailRelatedVideos: 'Verwandte Videos',
+            projectDetailRelatedImages: 'Verwandte Bilder',
+            projectDetailRelatedProjects: 'Verwandte Projekte'
         },
 
         fr: {
@@ -482,7 +566,19 @@
             projectDate: 'Date du projet',
             projectRole: 'Rôle',
             projectUnfilled: 'Non renseigné',
-            projectView: 'Voir le projet'
+            projectView: 'Voir le projet',
+
+            projectDetailBack: 'Retour aux projets',
+            projectDetailDate: 'Date du projet',
+            projectDetailLocation: 'Lieu',
+            projectDetailRole: 'Rôle',
+            projectDetailUpdated: 'Dernière mise à jour',
+            projectDetailToc: 'Sommaire du projet',
+            projectDetailRelated: 'Contenu associé',
+            projectDetailRelatedArticles: 'Articles associés',
+            projectDetailRelatedVideos: 'Vidéos associées',
+            projectDetailRelatedImages: 'Images associées',
+            projectDetailRelatedProjects: 'Projets associés'
         },
 
         ru: {
@@ -543,7 +639,19 @@
             projectDate: 'Дата проекта',
             projectRole: 'Роль',
             projectUnfilled: 'Не указано',
-            projectView: 'Открыть проект'
+            projectView: 'Открыть проект',
+
+            projectDetailBack: 'Назад к проектам',
+            projectDetailDate: 'Дата проекта',
+            projectDetailLocation: 'Место',
+            projectDetailRole: 'Роль',
+            projectDetailUpdated: 'Последнее обновление',
+            projectDetailToc: 'Содержание проекта',
+            projectDetailRelated: 'Связанные материалы',
+            projectDetailRelatedArticles: 'Связанные статьи',
+            projectDetailRelatedVideos: 'Связанные видео',
+            projectDetailRelatedImages: 'Связанные изображения',
+            projectDetailRelatedProjects: 'Связанные проекты'
         }
     };
 
@@ -559,6 +667,8 @@
         const homeConfig = config.home || {};
         const searchPage = config.searchPage || {};
         const projectsConfig = config.projects || {};
+        const commonConfig = config.common || {};
+        const relatedContentConfig = config.relatedContent || {};
 
         translations['en-US'] = {
             ...current,
@@ -637,7 +747,35 @@
 
             projectView:
                 projectsConfig.viewProject ||
-                current.projectView
+                current.projectView,
+
+            projectDetailBack:
+                projectsConfig.backToList ||
+                current.projectDetailBack,
+
+            projectDetailUpdated:
+                commonConfig.lastUpdated ||
+                current.projectDetailUpdated,
+
+            projectDetailRelated:
+                relatedContentConfig.title ||
+                current.projectDetailRelated,
+
+            projectDetailRelatedArticles:
+                relatedContentConfig.articles ||
+                current.projectDetailRelatedArticles,
+
+            projectDetailRelatedVideos:
+                relatedContentConfig.videos ||
+                current.projectDetailRelatedVideos,
+
+            projectDetailRelatedImages:
+                relatedContentConfig.images ||
+                current.projectDetailRelatedImages,
+
+            projectDetailRelatedProjects:
+                relatedContentConfig.projects ||
+                current.projectDetailRelatedProjects
         };
     }
 
@@ -707,7 +845,10 @@
 
         const element = document.querySelector(selector);
 
-        if (element) {
+        if (
+            element &&
+            element.textContent !== value
+        ) {
             element.textContent = value;
         }
     }
@@ -719,7 +860,9 @@
 
         document.querySelectorAll(selector).forEach(
             (element) => {
-                element.textContent = value;
+                if (element.textContent !== value) {
+                    element.textContent = value;
+                }
             }
         );
     }
@@ -923,6 +1066,63 @@
         );
     }
 
+    function applyProjectDetailTranslations(dictionary) {
+        setText(
+            '#project-detail-back',
+            dictionary.projectDetailBack
+        );
+
+        setText(
+            '#project-detail-date-label',
+            dictionary.projectDetailDate
+        );
+
+        setText(
+            '#project-detail-location-label',
+            dictionary.projectDetailLocation
+        );
+
+        setText(
+            '#project-detail-role-label',
+            dictionary.projectDetailRole
+        );
+
+        setText(
+            '#project-detail-updated-label',
+            dictionary.projectDetailUpdated
+        );
+
+        setText(
+            '#project-detail-toc-title',
+            dictionary.projectDetailToc
+        );
+
+        setText(
+            '#project-detail-related-title',
+            dictionary.projectDetailRelated
+        );
+
+        setText(
+            '#project-detail-related-articles-title',
+            dictionary.projectDetailRelatedArticles
+        );
+
+        setText(
+            '#project-detail-related-videos-title',
+            dictionary.projectDetailRelatedVideos
+        );
+
+        setText(
+            '#project-detail-related-images-title',
+            dictionary.projectDetailRelatedImages
+        );
+
+        setText(
+            '#project-detail-related-projects-title',
+            dictionary.projectDetailRelatedProjects
+        );
+    }
+
     function updateSelectedCard(languageCode) {
         document.querySelectorAll(
             '[data-language-code]'
@@ -1043,6 +1243,7 @@
         );
 
         applyProjectCardTranslations(dictionary);
+        applyProjectDetailTranslations(dictionary);
         updateSelectedCard(safeLanguageCode);
         saveLanguage(safeLanguageCode);
 
@@ -1197,6 +1398,10 @@
                     translations[languageCode];
 
                 applyProjectCardTranslations(
+                    dictionary
+                );
+
+                applyProjectDetailTranslations(
                     dictionary
                 );
             }
