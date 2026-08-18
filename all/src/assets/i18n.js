@@ -176,7 +176,17 @@
             searchEmptyPrompt: 'Introduce un término de búsqueda en el cuadro de arriba.',
             searchingFor: 'Buscando:',
             searchNoResultsTitle: 'No se encontraron resultados',
-            searchNoResultsDescription: 'Prueba a buscar con otras palabras clave'
+            searchNoResultsDescription: 'Prueba a buscar con otras palabras clave',
+            projectsPageTitle: 'Proyectos y soluciones',
+            projectsPageDescription:
+                'Proyectos que dirigí o en los que participé, junto con soluciones reutilizables desarrolladas mediante la experiencia práctica.',
+            projectsAll: 'Todos los proyectos',
+            projectsLead: 'Proyectos liderados',
+            projectsCollaboration: 'Proyectos colaborativos',
+            projectsSolutions: 'Soluciones',
+            projectsEmptyTitle: 'No hay proyectos',
+            projectsEmptyDescription:
+                'No hay proyectos disponibles actualmente en esta categoría.'
         },
 
         pt: {
@@ -202,7 +212,17 @@
             searchEmptyPrompt: 'Introduza um termo de pesquisa na caixa acima.',
             searchingFor: 'A pesquisar:',
             searchNoResultsTitle: 'Nenhum resultado encontrado',
-            searchNoResultsDescription: 'Tente pesquisar com outras palavras-chave'
+            searchNoResultsDescription: 'Tente pesquisar com outras palavras-chave',
+            projectsPageTitle: 'Projetos e soluções',
+            projectsPageDescription:
+                'Projetos que liderei ou em que participei, juntamente com soluções reutilizáveis desenvolvidas através da experiência prática.',
+            projectsAll: 'Todos os projetos',
+            projectsLead: 'Projetos liderados',
+            projectsCollaboration: 'Projetos colaborativos',
+            projectsSolutions: 'Soluções',
+            projectsEmptyTitle: 'Nenhum projeto',
+            projectsEmptyDescription:
+                'Não existem projetos disponíveis nesta categoria neste momento.'
         },
 
         de: {
@@ -228,7 +248,17 @@
             searchEmptyPrompt: 'Gib oben einen Suchbegriff ein.',
             searchingFor: 'Suche nach:',
             searchNoResultsTitle: 'Keine Ergebnisse gefunden',
-            searchNoResultsDescription: 'Versuche es mit anderen Suchbegriffen'
+            searchNoResultsDescription: 'Versuche es mit anderen Suchbegriffen',
+            projectsPageTitle: 'Projekte und Lösungen',
+            projectsPageDescription:
+                'Projekte, die ich geleitet oder an denen ich mitgewirkt habe, sowie wiederverwendbare Lösungen aus praktischer Erfahrung.',
+            projectsAll: 'Alle Projekte',
+            projectsLead: 'Geleitete Projekte',
+            projectsCollaboration: 'Gemeinschaftsprojekte',
+            projectsSolutions: 'Lösungen',
+            projectsEmptyTitle: 'Keine Projekte vorhanden',
+            projectsEmptyDescription:
+                'In dieser Kategorie sind derzeit keine Projekte verfügbar.'
         },
 
         fr: {
@@ -254,7 +284,17 @@
             searchEmptyPrompt: 'Saisissez un terme dans le champ de recherche ci-dessus.',
             searchingFor: 'Recherche :',
             searchNoResultsTitle: 'Aucun résultat trouvé',
-            searchNoResultsDescription: 'Essayez avec d’autres mots-clés'
+            searchNoResultsDescription: 'Essayez avec d’autres mots-clés',
+            projectsPageTitle: 'Projets et solutions',
+            projectsPageDescription:
+                'Projets que j’ai dirigés ou auxquels j’ai participé, ainsi que des solutions réutilisables issues de l’expérience pratique.',
+            projectsAll: 'Tous les projets',
+            projectsLead: 'Projets dirigés',
+            projectsCollaboration: 'Projets collaboratifs',
+            projectsSolutions: 'Solutions',
+            projectsEmptyTitle: 'Aucun projet',
+            projectsEmptyDescription:
+                'Aucun projet n’est actuellement disponible dans cette catégorie.'
         },
 
         ru: {
@@ -280,7 +320,17 @@
             searchEmptyPrompt: 'Введите поисковый запрос в поле выше.',
             searchingFor: 'Поиск:',
             searchNoResultsTitle: 'Ничего не найдено',
-            searchNoResultsDescription: 'Попробуйте использовать другие ключевые слова'
+            searchNoResultsDescription: 'Попробуйте использовать другие ключевые слова',
+            projectsPageTitle: 'Проекты и решения',
+            projectsPageDescription:
+                'Проекты, которыми я руководил или в которых участвовал, а также решения, созданные на основе практического опыта.',
+            projectsAll: 'Все проекты',
+            projectsLead: 'Проекты под моим руководством',
+            projectsCollaboration: 'Совместные проекты',
+            projectsSolutions: 'Решения',
+            projectsEmptyTitle: 'Проектов пока нет',
+            projectsEmptyDescription:
+                'В этой категории пока нет доступных проектов.'
         }
     };
 
