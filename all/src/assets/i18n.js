@@ -33,6 +33,16 @@
             searchingFor: '正在搜索：',
             searchNoResultsTitle: '没有找到结果',
             searchNoResultsDescription: '请尝试使用其他关键词搜索',
+            projectsPageTitle: '项目与解决方案',
+            projectsPageDescription:
+                '记录我主导和协作参与的项目，以及在实践中整理形成的解决方案。',
+            projectsAll: '全部项目',
+            projectsLead: '主导项目',
+            projectsCollaboration: '协作项目',
+            projectsSolutions: '解决方案',
+            projectsEmptyTitle: '暂无项目',
+            projectsEmptyDescription:
+                '当前分类的内容正在整理中。',
         },
 
         'zh-TW': {
@@ -59,6 +69,16 @@
             searchingFor: '正在搜尋：',
             searchNoResultsTitle: '找不到結果',
             searchNoResultsDescription: '請嘗試使用其他關鍵字搜尋',
+            projectsPageTitle: '專案與解決方案',
+            projectsPageDescription:
+                '記錄我主導和協作參與的專案，以及在實踐中整理形成的解決方案。',
+            projectsAll: '全部專案',
+            projectsLead: '主導專案',
+            projectsCollaboration: '協作專案',
+            projectsSolutions: '解決方案',
+            projectsEmptyTitle: '暫無專案',
+            projectsEmptyDescription:
+                '目前分類的內容正在整理中。',
         },
 
         'en-US': {
@@ -85,6 +105,16 @@
             searchingFor: 'Searching for:',
             searchNoResultsTitle: 'No results found',
             searchNoResultsDescription: 'Try searching with different keywords',
+            projectsPageTitle: 'Projects & Solutions',
+            projectsPageDescription:
+                'Projects I led or participated in, along with reusable solutions developed through practice.',
+            projectsAll: 'All Projects',
+            projectsLead: 'Lead Projects',
+            projectsCollaboration: 'Collaborative Projects',
+            projectsSolutions: 'Solutions',
+            projectsEmptyTitle: 'No Projects Yet',
+            projectsEmptyDescription:
+                'No projects are available in this category.',
         },
 
         'en-GB': {
@@ -622,69 +652,129 @@
     }
 
     function applyLanguage(languageCode) {
-        const safeLanguageCode =
-            translations[languageCode]
-                ? languageCode
-                : DEFAULT_LANGUAGE;
+    const safeLanguageCode =
+        translations[languageCode]
+            ? languageCode
+            : DEFAULT_LANGUAGE;
 
-        const dictionary =
-            translations[safeLanguageCode];
+    /*
+     * 先以简体中文作为公共后备字典，
+     * 再覆盖当前语言已有的翻译。
+     *
+     * 这样尚未补齐项目页翻译的语言，
+     * 不会出现 undefined 或空白文字。
+     */
+    const dictionary = {
+        ...translations[DEFAULT_LANGUAGE],
+        ...translations[safeLanguageCode]
+    };
 
-        applyDirection(safeLanguageCode);
-        applyNavigation(dictionary);
-        applyLanguagePanel(
-            safeLanguageCode,
-            dictionary
-        );
-        applyControls(dictionary);
+    applyDirection(safeLanguageCode);
+    applyNavigation(dictionary);
 
-        setText(
-            '#recent-updates-heading',
-            dictionary.recentUpdates
-        );
+    applyLanguagePanel(
+        safeLanguageCode,
+        dictionary
+    );
 
-        setText(
-            '#search-go-back',
-            dictionary.searchGoBack
-        );
+    applyControls(dictionary);
 
-        setText(
-            '#search-empty-prompt',
-            dictionary.searchEmptyPrompt
-        );
+    /*
+     * 首页侧栏
+     */
+    setText(
+        '#recent-updates-heading',
+        dictionary.recentUpdates
+    );
 
-        setText(
-            '#searching-for-label',
-            dictionary.searchingFor
-        );
+    /*
+     * 搜索页面
+     */
+    setText(
+        '#search-go-back',
+        dictionary.searchGoBack
+    );
 
-        setText(
-            '#search-no-results-title',
-            dictionary.searchNoResultsTitle
-        );
+    setText(
+        '#search-empty-prompt',
+        dictionary.searchEmptyPrompt
+    );
 
-        setText(
-            '#search-no-results-description',
-            dictionary.searchNoResultsDescription
-        );
+    setText(
+        '#searching-for-label',
+        dictionary.searchingFor
+    );
 
-        updateSelectedCard(
-            safeLanguageCode
-        );
+    setText(
+        '#search-no-results-title',
+        dictionary.searchNoResultsTitle
+    );
 
-        document.dispatchEvent(
-            new CustomEvent(
-                'freecat:language-changed',
-                {
-                    detail: {
-                        language:
-                            safeLanguageCode
-                    }
+    setText(
+        '#search-no-results-description',
+        dictionary.searchNoResultsDescription
+    );
+
+    /*
+     * 项目列表页面
+     */
+    setText(
+        '#projects-page-title',
+        dictionary.projectsPageTitle
+    );
+
+    setText(
+        '#projects-page-description',
+        dictionary.projectsPageDescription
+    );
+
+    setText(
+        '#projects-filter-all',
+        dictionary.projectsAll
+    );
+
+    setText(
+        '#projects-filter-lead',
+        dictionary.projectsLead
+    );
+
+    setText(
+        '#projects-filter-collaboration',
+        dictionary.projectsCollaboration
+    );
+
+    setText(
+        '#projects-filter-solutions',
+        dictionary.projectsSolutions
+    );
+
+    setText(
+        '#projects-empty-title',
+        dictionary.projectsEmptyTitle
+    );
+
+    setText(
+        '#projects-empty-description',
+        dictionary.projectsEmptyDescription
+    );
+
+    updateSelectedCard(
+        safeLanguageCode
+    );
+
+    document.dispatchEvent(
+        new CustomEvent(
+            'freecat:language-changed',
+            {
+                detail: {
+                    language:
+                        safeLanguageCode
                 }
-            )
-        );
-    }
-
+            }
+        )
+    );
+}
+    
         function observeDynamicContent() {
         if (
             dynamicTranslationObserver ||
