@@ -41,10 +41,6 @@ const indexPage = require('./build/pages/index.js');
 const allPage = require('./build/pages/all.js');
 const searchPage = require('./build/pages/search.js');
 const aboutPage = require('./build/pages/about.js');
-const resumePage = require('./build/pages/resume.js');
-const projectsPage = require('./build/pages/projects.js');
-const videosPage = require('./build/pages/videos.js');
-const galleryPage = require('./build/pages/gallery.js');
 const notFoundPage = require('./build/pages/notfound.js');
 const shellPage = require('./build/pages/shell.js');
 const { generateSitemap, generateRobotsTxt, generateLlmsTxt, generateFeed, generateOpenSearchXml } = require('./build/pages/sitemap.js');
@@ -57,17 +53,11 @@ const DIRS = {
     assets: path.join(__dirname, 'src', 'assets'),
     shared: path.join(__dirname, 'shared'),
     images: path.join(__dirname, 'image'),
-    files: path.join(__dirname, 'files'),
-    i18n: path.join(__dirname, 'i18n'),
     output: path.join(__dirname, 'dist'),
     templates: path.join(__dirname, 'src'),
     partials: path.join(__dirname, 'src', 'partials'),
-       build: path.join(__dirname, 'build'),
-  control: path.join(__dirname, '..', 'Control'),
-resume: path.join(__dirname, '..', 'resume'),
-projects: path.join(__dirname, '..', 'projects'),
-videos: path.join(__dirname, '..', 'videos'),
-gallery: path.join(__dirname, '..', 'gallery')
+    build: path.join(__dirname, 'build'),
+    control: path.join(__dirname, '..', 'Control')
 };
 
 // ===== 2. 加载 git dates =====
@@ -232,13 +222,6 @@ const tplPost = engine.loadTemplate('template_post.html');
 const tplIndexAll = engine.loadTemplate('template_index_all.html');
 const tplSearch = engine.loadTemplate('template_index_search.html');
 const tplAbout = engine.loadTemplate('template_index_About.html');
-const tplResume = engine.loadTemplate('template_resume.html');
-const tplProjects = engine.loadTemplate('template_projects.html');
-const tplProject = engine.loadTemplate('template_project.html');
-const tplVideos = engine.loadTemplate('template_videos.html');
-const tplVideo = engine.loadTemplate('template_video.html');
-const tplGallery = engine.loadTemplate('template_gallery.html');
-const tplGalleryItem = engine.loadTemplate('template_gallery_item.html');
 const tplNotFound = engine.loadTemplate('template_index_404.html');
 const tplShell = engine.loadTemplate('template_shell.html');
 
@@ -269,8 +252,8 @@ if (siteConfig.show_recent_posts === true) {
 
     recentPostsSidebarInnerHtml = `
                         <div class="flex flex-col flex-shrink-0 mt-8">
-                            <h3 id="recent-updates-heading" class="freecat-sidebar-recent-heading text-sm tracking-wider text-slate-600 dark:text-slate-300 mb-4 animate-fade-in-up" style="animation-delay: ${HEADING_DELAY}ms">
-                                最近更新
+                            <h3 class="freecat-sidebar-recent-heading text-sm tracking-wider text-slate-600 dark:text-slate-300 mb-4 animate-fade-in-up" style="animation-delay: ${HEADING_DELAY}ms">
+                                Update
                             </h3>
                             <ul class="flex flex-col divide-y divide-slate-200 dark:divide-slate-700">
                                 ${itemsHtml.trim()}
@@ -294,62 +277,9 @@ indexPage.generateAll({ posts: allPosts, template: tplIndex, postsPerPage: POSTS
 // 外壳输出到 /shell（noindex），真人浏览器在内容页上由 bootstrap 换壳启用顶栏音频无缝体验。
 shellPage.generate({ template: tplShell, siteConfig, seoConfig, outputDir: DIRS.output });
 allPage.generate({ posts: allPosts, template: tplIndexAll, siteConfig, seoConfig, outputDir: DIRS.output });
-searchPage.generate({
-    posts: allPosts,
-    template: tplSearch,
-    siteConfig,
-    seoConfig,
-    outputDir: DIRS.output,
-    recentPostsSidebarHtml: recentPostsSidebarHomeWrapperHtml
-});
-
-aboutPage.generate({
-    template: tplAbout,
-    siteConfig,
-    seoConfig,
-    aboutConfig,
-    outputDir: DIRS.output
-});
-
-resumePage.generate({
-    template: tplResume,
-    siteConfig,
-    seoConfig,
-    resumePath: path.join(DIRS.resume, 'profile.md'),
-    outputDir: DIRS.output
-});
-
-projectsPage.generate({
-    projectsDir: DIRS.projects,
-    listTemplate: tplProjects,
-    detailTemplate: tplProject,
-    siteConfig,
-    seoConfig,
-    outputDir: DIRS.output
-});
-
-videosPage.generate({
-    videosDir: DIRS.videos,
-    listTemplate: tplVideos,
-    detailTemplate: tplVideo,
-    siteConfig,
-    seoConfig,
-    outputDir: DIRS.output
-});
-
-galleryPage.generate({
-    galleryDir: DIRS.gallery,
-    listTemplate: tplGallery,
-    detailTemplate: tplGalleryItem,
-    siteConfig,
-    seoConfig,
-    outputDir: DIRS.output
-});
-
-notFoundPage.generateNotFoundPage({
-    template: tplNotFound,
-    outputDir: DIRS.output
-});
+searchPage.generate({ posts: allPosts, template: tplSearch, siteConfig, seoConfig, outputDir: DIRS.output, recentPostsSidebarHtml: recentPostsSidebarHomeWrapperHtml });
+aboutPage.generate({ template: tplAbout, siteConfig, seoConfig, aboutConfig, outputDir: DIRS.output });
+notFoundPage.generateNotFoundPage({ template: tplNotFound, outputDir: DIRS.output });
 generateSitemap({ posts: allPosts, siteConfig, seoConfig, outputDir: DIRS.output });
 generateRobotsTxt({ siteConfig, seoConfig, outputDir: DIRS.output });
 generateLlmsTxt({ posts: allPosts, siteConfig, seoConfig, outputDir: DIRS.output });
@@ -364,8 +294,6 @@ console.log('📦 Moving assets and configs...');
 if (fs.existsSync(DIRS.assets)) copyDir(DIRS.assets, path.join(DIRS.output, 'assets'), { ignore: ['posts'] });
 if (fs.existsSync(DIRS.shared)) copyDir(DIRS.shared, path.join(DIRS.output, 'assets'));
 if (fs.existsSync(DIRS.images)) copyDir(DIRS.images, path.join(DIRS.output, 'image'));
-if (fs.existsSync(DIRS.files)) copyDir(DIRS.files, path.join(DIRS.output, 'files'));
-if (fs.existsSync(DIRS.i18n)) copyDir(DIRS.i18n, path.join(DIRS.output, 'i18n'));
 
 // ===== 6.6 生成 JS bundle（CSS bundle 需等 Tailwind 编译完成，见第 8 步之后）=====
 console.log('🧩 Writing JS bundles...');
