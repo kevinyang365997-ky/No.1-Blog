@@ -1,5 +1,5 @@
 ---
-site_url: https://no-1-blog.pages.dev
+site_url: https://blog.smtsolutions.de5.net
 _01: 网站正式域名，用于生成 Sitemap、Canonical、Open Graph 链接、RSS 和 llms.txt，例如 https://example.com
 
 site_description: Kevin 的个人博客，记录思考、学习与生活。
@@ -11,7 +11,7 @@ _03: 网站语言代码，例如 zh-CN、en、ja、ko。
 site_author: Kevin
 _04: 默认作者名称，用于文章页和结构化数据。
 
-site_author_url: https://no-1-blog.pages.dev
+site_author_url: https://blog.smtsolutions.de5.net
 _05: 作者主页链接，可留空；填写时建议使用完整网址。
 
 site_author_sameas:
