@@ -1,6 +1,5 @@
 {
-  "douyinVideoListEndpoint": "https://open.douyin.com/video/list/",
-  "maxPages": 3,
-  "matchMaxHours": 96,
-  "titleSimilarity": 0.45
+  "tiktokUsername": "kevinthtautomation",
+  "creator": "Kevin THT Automation",
+  "maxPages": 3
 }

@@ -1,4 +1,4 @@
-name: Sync Douyin videos
+name: Sync TikTok videos
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: sync-social-videos
+  group: sync-tiktok-videos
   cancel-in-progress: false
 
 jobs:
@@ -27,26 +27,23 @@ jobs:
         with:
           node-version: 20
 
-      - name: Test matching logic
+      - name: Test TikTok sync logic
         run: node --test automation/social-video-sync.test.mjs
 
-      - name: Synchronize new videos
+      - name: Synchronize new TikTok videos
         env:
-          DOUYIN_ACCESS_TOKEN: ${{ secrets.DOUYIN_ACCESS_TOKEN }}
-          DOUYIN_OPEN_ID: ${{ secrets.DOUYIN_OPEN_ID }}
-          DOUYIN_CLIENT_KEY: ${{ secrets.DOUYIN_CLIENT_KEY }}
           TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
         run: node automation/social-video-sync.mjs
 
       - name: Commit synchronized videos
         run: |
           if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
-            echo "No new matched videos."
+            echo "No new TikTok videos."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add videos all/image/videos/synced
-          git commit -m "chore: sync new Douyin videos"
+          git add videos all/image/videos/tiktok
+          git commit -m "chore: sync new TikTok videos"
           git pull --rebase origin main
           git push origin main

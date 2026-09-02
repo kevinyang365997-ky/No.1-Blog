@@ -1,42 +1,29 @@
-# 抖音与 TikTok 视频同步
+# TikTok 视频自动同步
 
-该任务每小时检查一次已授权抖音账号的新公开视频，并在 TikTok 已授权账号中按标题和发布时间寻找对应视频。只有找到对应 TikTok 视频和封面时，才会创建博客视频条目；TikTok 的临时封面会被下载到仓库，避免链接过期。
+该任务每小时读取一次 `@kevinthtautomation` 的公开视频。发现新视频后，自动下载 TikTok 官方封面、生成博客视频条目并提交到 GitHub。封面会保存到仓库，因此不受 TikTok 临时封面 URL 过期影响。
 
-## 启用前需要的授权
+## TikTok 授权
 
-请勿把任何密钥或 Token 写入文件或发送到聊天中。全部凭证应保存到 GitHub 仓库的 **Settings → Secrets and variables → Actions**。
+1. 在 TikTok for Developers 创建应用。
+2. 启用 Login Kit 和 Display API。
+3. 申请 `user.info.basic` 和 `video.list`。
+4. 使用 `@kevinthtautomation` 完成 OAuth 授权。
+5. 将获得的 access token 保存为 GitHub Repository secret：`TIKTOK_ACCESS_TOKEN`。
 
-### 抖音开放平台
+不要把 Client Secret、access token 或 refresh token 写入文件或发送到聊天中。
 
-创建网站应用并申请“内容运营-视频信息数据/查询授权账号视频列表”能力，让目标抖音账号完成 OAuth 授权。添加以下 Repository secrets：
+## 启用定时任务
 
-- `DOUYIN_ACCESS_TOKEN`
-- `DOUYIN_OPEN_ID`
-- `DOUYIN_CLIENT_KEY`
-
-如果控制台提供的视频列表地址与默认地址不同，再添加 `DOUYIN_VIDEO_LIST_ENDPOINT` 并同步修改工作流环境变量。
-
-### TikTok for Developers
-
-创建应用，启用 Login Kit 和 Display API，申请 `user.info.basic`、`video.list`，让 `@kevinthtautomation` 完成 OAuth 授权。添加：
-
-- `TIKTOK_ACCESS_TOKEN`
-
-TikTok access token 当前有效期较短。正式长期自动运行前，需要增加安全的 refresh-token 存储服务；不要把 refresh token 提交到仓库。当前工作流在 Token 失效时会失败并停止写入，不会生成错误内容。
-
-### 开启任务
-
-确认所有 Secrets 已添加后，在 Repository variables 中添加：
+在 GitHub 仓库 **Settings → Secrets and variables → Actions → Variables** 中添加：
 
 - `SOCIAL_VIDEO_SYNC_ENABLED` = `true`
 
-然后进入 **Actions → Sync Douyin videos → Run workflow** 手动运行一次。成功后，定时任务会在每小时第 17 分钟运行。
+然后进入 **Actions → Sync TikTok videos → Run workflow** 手动运行一次。成功后任务会在每小时第 17 分钟运行。
 
-## 匹配规则
+## Token 有效期
 
-- 发布时间相差不超过 96 小时；
-- 标题关键词相似度不低于 0.45；
-- 没有匹配 TikTok 视频时跳过，不使用错误封面；
-- 已写入 Markdown 的 `douyin_video_id` 用于永久去重。
+TikTok access token 通常约 24 小时有效。当前工作流在 Token 失效时会安全失败，不会生成错误内容。长期无人值守运行需要安全保存 refresh token，并在服务端刷新 access token；refresh token 不应提交到 GitHub 仓库。
 
-可以在 `social-video-sync.config.json` 中调整时间窗口和标题相似度。
+## 去重
+
+每个自动生成的 Markdown 文件都会保存 `tiktok_video_id`。同步程序还会识别已有 TikTok 链接中的视频 ID，因此不会重复创建已手工添加的视频。

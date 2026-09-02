@@ -146,8 +146,7 @@ function isSafeEmbedUrl(value) {
             'www.facebook.com',
             'facebook.com',
             'www.tiktok.com',
-            'tiktok.com',
-            'open.douyin.com'
+            'tiktok.com'
         ];
 
         return allowedHosts.includes(hostname);
