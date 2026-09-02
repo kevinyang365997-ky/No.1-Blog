@@ -112,6 +112,26 @@ function generateSitemap({ posts, siteConfig, outputDir }) {
         lines.push('  </url>');
     });
 
+    ['zh-cn', 'en-us'].forEach(locale => {
+        const localizedVideosDir = path.join(outputDir, locale, 'videos');
+
+        if (!fs.existsSync(localizedVideosDir)) return;
+
+        const localizedPaths = [
+            `/${locale}/videos/`,
+            ...fs.readdirSync(localizedVideosDir, { withFileTypes: true })
+                .filter(entry => entry.isDirectory())
+                .map(entry => `/${locale}/videos/${entry.name}/`)
+        ];
+
+        localizedPaths.forEach(localizedPath => {
+            lines.push('  <url>');
+            lines.push(`    <loc>${xmlEscape(baseUrl + encodePath(localizedPath))}</loc>`);
+            lines.push(`    <priority>${localizedPath.endsWith('/videos/') ? '0.8' : '0.7'}</priority>`);
+            lines.push('  </url>');
+        });
+    });
+
     lines.push('</urlset>');
     fs.writeFileSync(path.join(outputDir, 'sitemap.xml'), lines.join('\n'), 'utf-8');
     console.log('  Generated: sitemap.xml');

@@ -838,6 +838,53 @@
         return DEFAULT_LANGUAGE;
     }
 
+    function preferredVideoContentSegment(languageCode) {
+        return String(languageCode || '').toLowerCase().startsWith('zh')
+            ? 'zh-cn'
+            : 'en-us';
+    }
+
+    function updateVideoLanguageState(languageCode) {
+        const contentKind = document.body?.dataset.contentKind;
+
+        if (contentKind !== 'video' && contentKind !== 'video-list') {
+            return false;
+        }
+
+        const segment = preferredVideoContentSegment(languageCode);
+        const contentId = document.body?.dataset.contentId || '';
+        const targetPath = contentKind === 'video'
+            ? `/${segment}/videos/${encodeURIComponent(contentId)}/`
+            : `/${segment}/videos/`;
+
+        document.querySelectorAll('a[data-i18n="videos"]').forEach((link) => {
+            link.setAttribute('href', `/${segment}/videos/`);
+        });
+
+        const normalizedCurrent = `${window.location.pathname.replace(/\/+$/, '')}/`;
+        const normalizedTarget = `${targetPath.replace(/\/+$/, '')}/`;
+
+        if (normalizedCurrent !== normalizedTarget) {
+            window.location.assign(targetPath);
+            return true;
+        }
+
+        const contentLocale = document.body?.dataset.contentLocale || '';
+        const exactLanguages = contentLocale === 'zh-CN'
+            ? ['zh-CN']
+            : ['en-US', 'en-GB'];
+        const fallback = document.querySelector('[data-video-language-fallback]');
+
+        if (fallback) {
+            fallback.classList.toggle(
+                'hidden',
+                exactLanguages.includes(languageCode)
+            );
+        }
+
+        return false;
+    }
+
     function setText(selector, value) {
         if (!value) {
             return;
@@ -1246,6 +1293,10 @@
         applyProjectDetailTranslations(dictionary);
         updateSelectedCard(safeLanguageCode);
         saveLanguage(safeLanguageCode);
+
+        if (updateVideoLanguageState(safeLanguageCode)) {
+            return;
+        }
 
         window.dispatchEvent(
             new CustomEvent(

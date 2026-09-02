@@ -4,7 +4,7 @@
 <head>
     <!-- INCLUDE:head-base -->
 
-    <title>视频 - <!-- SITE_TITLE --></title>
+    <title><!-- VIDEOS_PAGE_TITLE --> - <!-- SITE_TITLE --></title>
 
     <!-- VIDEOS_SEO_HEAD -->
 
@@ -61,6 +61,8 @@
 </head>
 
 <body
+    data-content-locale="<!-- VIDEOS_CONTENT_LOCALE -->"
+    data-content-kind="video-list"
     class="bg-background-light font-display text-[#1e293b] transition-colors duration-200 dark:bg-background-dark dark:text-slate-200"
 >
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
@@ -71,6 +73,13 @@
             class="page-blur-target mt-[var(--freecat-page-top-offset)] grow px-5 pb-20 pt-10 sm:px-8 md:px-16 lg:px-28"
         >
             <div class="mx-auto w-full max-w-[1300px]">
+
+                <div
+                    data-video-language-fallback
+                    class="mb-8 hidden rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-6 text-amber-900 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-200"
+                >
+                    <!-- VIDEOS_FALLBACK_NOTICE -->
+                </div>
 
                 <!-- 页面标题 -->
                 <section class="mb-10 text-center md:mb-14">
@@ -83,20 +92,20 @@
                     <h1
                         class="mb-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl"
                     >
-                        视频库
+                        <!-- VIDEOS_PAGE_TITLE -->
                     </h1>
 
                     <p
                         class="mx-auto max-w-3xl text-base leading-8 text-slate-500 dark:text-slate-400"
                     >
-                        整理与项目、知识、学习和生活相关的视频，并集中维护各视频平台的原始链接。
+                        <!-- VIDEOS_PAGE_DESCRIPTION -->
                     </p>
                 </section>
 
                 <!-- 平台筛选 -->
                 <nav
                     class="mb-10 flex flex-wrap justify-center gap-3"
-                    aria-label="视频平台筛选"
+                    aria-label="<!-- VIDEOS_FILTER_LABEL -->"
                 >
                     <button
                         type="button"
@@ -104,7 +113,7 @@
                         data-video-filter="all"
                         aria-pressed="true"
                     >
-                        全部视频
+                        <!-- VIDEOS_ALL_LABEL -->
                     </button>
 
                     <button
@@ -140,7 +149,7 @@
                         data-video-filter="douyin"
                         aria-pressed="false"
                     >
-                        抖音
+                        <!-- VIDEOS_DOUYIN_LABEL -->
                     </button>
 
                     <button
@@ -149,7 +158,7 @@
                         data-video-filter="kuaishou"
                         aria-pressed="false"
                     >
-                        快手
+                        <!-- VIDEOS_KUAISHOU_LABEL -->
                     </button>
 
                     <button
@@ -158,7 +167,7 @@
                         data-video-filter="wechat-video"
                         aria-pressed="false"
                     >
-                        视频号
+                        <!-- VIDEOS_WECHAT_LABEL -->
                     </button>
 
                     <button
@@ -167,7 +176,7 @@
                         data-video-filter="xiaohongshu"
                         aria-pressed="false"
                     >
-                        小红书
+                        <!-- VIDEOS_XIAOHONGSHU_LABEL -->
                     </button>
 
                     <button
@@ -176,14 +185,14 @@
                         data-video-filter="local"
                         aria-pressed="false"
                     >
-                        本地视频
+                        <!-- VIDEOS_LOCAL_LABEL -->
                     </button>
                 </nav>
 
                 <!-- 视频瀑布流 -->
                 <section
                     id="videos-grid"
-                    aria-label="视频列表"
+                    aria-label="<!-- VIDEOS_LIST_LABEL -->"
                 >
                     <!-- VIDEOS_ITEMS -->
                 </section>
@@ -196,11 +205,11 @@
                     <h2
                         class="mb-3 text-2xl font-semibold text-slate-800 dark:text-white"
                     >
-                        暂无视频
+                        <!-- VIDEOS_EMPTY_TITLE -->
                     </h2>
 
                     <p class="text-sm text-slate-500 dark:text-slate-400">
-                        当前平台的视频内容正在整理中。
+                        <!-- VIDEOS_EMPTY_DESCRIPTION -->
                     </p>
                 </section>
 
