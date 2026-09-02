@@ -1,14 +1,14 @@
 ---
 id: manual-tht-insertion-challenges
 title: "One of the Toughest Jobs in an Electronics Factory: Manual THT Insertion"
-platform: youtube
-category: solution
+platform: tiktok
+category: project
 date: 2026-09-02
 updated:
 duration:
-creator: SMT Solutions
-source_url:
-embed_url:
+creator: Kevin THT Automation
+source_url: https://www.tiktok.com/@kevinthtautomation/video/7675641097019739399
+embed_url: https://www.tiktok.com/player/v1/7675641097019739399
 cover:
 summary: 手工 THT 插件看似简单，却长期面临效率、准确性、人员疲劳和一致性等挑战。本视频从实际生产痛点出发，探讨如何让插件作业更加稳定、高效。
 tags:
@@ -26,29 +26,29 @@ show: true
 
 # 视频介绍
 
-这里简要介绍视频的主题、背景和主要内容。
+手工 THT 插件是电子工厂中最依赖经验、专注力和持续体力的工序之一。本视频从实际作业场景出发，观察人工插件面临的效率、一致性与人员疲劳问题。
 
 ## 视频信息
 
-- 视频平台：
-- 视频作者：
-- 发布时间：
-- 视频时长：
-- 内容分类：
+- 视频平台：TikTok
+- 视频作者：Kevin THT Automation
+- 发布时间：2026-09-02
+- 视频时长：待补充
+- 内容分类：项目视频
 
 ## 内容摘要
 
-介绍视频主要讲解或记录了什么。
+视频记录手工 THT 插件的实际工作状态，并介绍制造企业在稳定产能、减少重复劳动和保持插件质量方面所面临的挑战。
 
 ## 重点内容
 
-1. 重点内容一
-2. 重点内容二
-3. 重点内容三
+1. 手工 THT 插件对操作人员专注度的要求。
+2. 重复作业带来的疲劳、效率和一致性问题。
+3. 通过流程改善与自动化降低人工负担的可能性。
 
 ## 视频来源
 
-视频由外部平台托管，点击视频卡片或播放按钮后访问原始视频。
+视频由 TikTok 托管，可在页面中播放，也可以前往 TikTok 查看原始视频。
 
 ## 相关项目
 
