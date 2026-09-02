@@ -1,0 +1,43 @@
+---
+id: southern-machinery-automatic-riveting-machine-s-90sr-automatic-touch-sensor-spring-cover-plate-assembly-02
+title: "Automatic Riveting Machine - S-90SR Automatic Touch Sensor Spring Cover Plate Assembly and Riveting Machine"
+category: project
+date: 2026-09-02
+updated:
+location: China
+photographer: Southern Machinery
+image: /image/gallery/equipment/southern-machinery-automatic-riveting-machine-s-90sr-automatic-touch-sensor-spring-cover-plate-assembly-02.webp
+thumbnail: /image/gallery/equipment/southern-machinery-automatic-riveting-machine-s-90sr-automatic-touch-sensor-spring-cover-plate-assembly-02.webp
+alt: "Southern Machinery automatic riveting machine s-90sr automatic touch sensor spring cover plate assembly and riveting machine"
+summary: "Southern Machinery automatic riveting machine image showing s-90sr automatic touch sensor spring cover plate assembly and riveting machine for SMT and THT electronics manufacturing applications."
+tags:
+- riveting machine
+- industrial automation
+related_projects:
+related_articles:
+featured: false
+show: true
+---
+
+# Image Overview
+
+Southern Machinery automatic riveting machine image showing s-90sr automatic touch sensor spring cover plate assembly and riveting machine for SMT and THT electronics manufacturing applications.
+
+## Equipment Information
+
+- Brand: Southern Machinery
+- Category: riveting machine
+- Image type: Product and equipment reference
+- Source archive: `Riveting Machine\设备净图\S-90SR Automatic Touch Sensor Spring Cover Plate Assembly and Riveting Machine.png`
+
+## Image Description
+
+Southern Machinery automatic riveting machine s-90sr automatic touch sensor spring cover plate assembly and riveting machine. This web image uses a descriptive filename, WebP compression and meaningful alternative text for faster loading and improved image search context.
+
+## Usage
+
+This image is part of the Southern Machinery product knowledge base and is published to support equipment selection, application research and SMT/THT automation project communication.
+
+## Copyright
+
+This image is maintained by Southern Machinery. Please obtain permission before reuse in external commercial materials.
