@@ -1,15 +1,15 @@
 ---
 id: manual-tht-insertion-challenges
-title: One of the Toughest Jobs in an Electronics Factory: Manual THT Insertion
+title: "One of the Toughest Jobs in an Electronics Factory: Manual THT Insertion"
 platform: youtube
 category: solution
 date: 2026-09-02
 updated:
 duration:
 creator: SMT Solutions
-source_url: https://www.youtube.com/watch?v=你的视频ID
-embed_url: https://www.youtube.com/embed/你的视频ID
-cover: https://i.ytimg.com/vi/你的视频ID/hqdefault.jpg
+source_url:
+embed_url:
+cover:
 summary: 手工 THT 插件看似简单，却长期面临效率、准确性、人员疲劳和一致性等挑战。本视频从实际生产痛点出发，探讨如何让插件作业更加稳定、高效。
 tags:
 - THT
