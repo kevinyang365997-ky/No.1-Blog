@@ -9,7 +9,7 @@ duration:
 creator: Kevin THT Automation
 source_url: https://www.tiktok.com/@kevinthtautomation/video/7675641097019739399
 embed_url: https://www.tiktok.com/player/v1/7675641097019739399
-cover:
+cover: /image/videos/manual-tht-insertion-cover.png
 summary: 手工 THT 插件看似简单，却长期面临效率、准确性、人员疲劳和一致性等挑战。本视频从实际生产痛点出发，探讨如何让插件作业更加稳定、高效。
 tags:
 - THT
