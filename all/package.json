@@ -5,6 +5,8 @@
     "fonts:subset": "node build/fonts.js",
     "extract-dates": "node extract-git-dates.js",
     "build": "node build.js",
+    "seo:audit": "node seo-audit.js",
+    "publish:check": "npm run seo:audit && npm run build",
     "build:with-dates": "node extract-git-dates.js && node build.js",
     "preview": "node preview.js",
     "dev": "node dev.js",

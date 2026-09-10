@@ -167,6 +167,8 @@ function loadGalleryItems(galleryDir) {
             title: String(
                 data.title || path.parse(filename).name
             ).trim(),
+            seoTitle: String(data.seo_title || '').trim(),
+            seoMetaDescription: String(data.seo_meta_description || '').trim(),
             category,
             categoryLabel: CATEGORY_LABELS[category],
             date: formatDate(data.date),
@@ -490,7 +492,7 @@ function generateDetailPages({
         const itemPath = `/gallery/${item.id}/`;
 
         const pageTitle =
-            `${item.title} - ${
+            `${item.seoTitle || item.title} - ${
                 siteConfig.site_title ||
                 siteConfig.site_name ||
                 'FreeCat Blog'
@@ -499,7 +501,7 @@ function generateDetailPages({
         const seoHead = seo.renderHeadTags({
             title: pageTitle,
             description:
-                item.summary ||
+                item.seoMetaDescription || item.summary ||
                 seo.defaultDescription(siteConfig, seoConfig),
             canonicalPath: itemPath,
             siteConfig,

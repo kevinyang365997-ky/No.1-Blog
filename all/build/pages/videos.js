@@ -320,6 +320,8 @@ function loadVideos(videosDir, locale = 'zh-CN') {
             title: String(
                 data.title || path.parse(filename).name
             ).trim(),
+            seoTitle: String(data.seo_title || '').trim(),
+            seoMetaDescription: String(data.seo_meta_description || '').trim(),
             platform,
             platformLabel: PLATFORM_LABELS[platform],
             category,
@@ -734,7 +736,7 @@ function generateDetailPages({
         const canonicalPath = videoPath(locale, video.id);
 
         const pageTitle =
-            `${video.title} - ${
+            `${video.seoTitle || video.title} - ${
                 siteConfig.site_title ||
                 siteConfig.site_name ||
                 'FreeCat Blog'
@@ -743,7 +745,7 @@ function generateDetailPages({
         const seoHead = seo.renderHeadTags({
             title: pageTitle,
             description:
-                video.summary ||
+                video.seoMetaDescription || video.summary ||
                 seo.defaultDescription(siteConfig, seoConfig),
             canonicalPath,
             siteConfig,

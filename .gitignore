@@ -18,6 +18,7 @@
 # 构建生成的文件
 all/dist/
 all/node_modules/
+all/.seo-reports/
 
 # Vercel
 .vercel/

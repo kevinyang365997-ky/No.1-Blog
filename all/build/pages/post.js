@@ -434,6 +434,8 @@ function loadPosts({ postsDir, gitDates, postDates, postIds, latestUpdates, skip
 
         posts.push({
             title: autoSpacing(titleRaw),
+            seoTitle: String(frontmatter.seo_title || '').trim(),
+            seoMetaDescription: String(frontmatter.seo_meta_description || '').trim(),
             slug,
             postId,
             date: publishDate,
@@ -547,11 +549,11 @@ function renderPostPage({ post, template, siteConfig, seoConfig, assetVersion = 
         ? '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
         : '';
 
-    const pageTitle = `${post.title} - ${siteConfig.site_title || siteConfig.site_name || 'FreeCat Blog'}`;
+    const pageTitle = `${post.seoTitle || post.title} - ${siteConfig.site_title || siteConfig.site_name || 'FreeCat Blog'}`;
     const sharePublishDate = post.date.tz('Asia/Shanghai').format('YYYY.MM.DD');
     const seoHead = seo.renderHeadTags({
         title: pageTitle,
-        description: seo.articleSummary(post),
+        description: post.seoMetaDescription || seo.articleSummary(post),
         canonicalPath: post.link,
         siteConfig,
         seoConfig,

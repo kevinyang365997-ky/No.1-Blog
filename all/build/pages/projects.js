@@ -144,6 +144,8 @@ function loadProjects(projectsDir) {
             title: String(
                 data.title || path.parse(filename).name
             ).trim(),
+            seoTitle: String(data.seo_title || '').trim(),
+            seoMetaDescription: String(data.seo_meta_description || '').trim(),
             category,
             categoryLabel: CATEGORY_LABELS[category],
             date: formatDate(data.date),
@@ -516,7 +518,7 @@ function generateDetailPages({
         const projectPath = `/projects/${project.id}/`;
 
         const pageTitle =
-            `${project.title} - ${
+            `${project.seoTitle || project.title} - ${
                 siteConfig.site_title ||
                 siteConfig.site_name ||
                 'FreeCat Blog'
@@ -525,7 +527,7 @@ function generateDetailPages({
         const seoHead = seo.renderHeadTags({
             title: pageTitle,
             description:
-                project.summary ||
+                project.seoMetaDescription || project.summary ||
                 seo.defaultDescription(siteConfig, seoConfig),
             canonicalPath: projectPath,
             siteConfig,
