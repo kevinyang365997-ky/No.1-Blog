@@ -2,17 +2,26 @@
   "modified": {
     "把网站交给 Google 和 Bing —— 小白零基础教程.md": "2026-06-18T22:37:41+08:00",
     "音频与视频示例.md": "2026-06-18T22:37:41+08:00",
-    "这是一篇空白内容的模板文章.md": "2026-09-10T10:13:21+08:00"
+    "这是一篇空白内容的模板文章.md": "2026-09-10T10:13:21+08:00",
+    "Custom JUKI Gripper Nozzle Case Study.md": "2026-09-10T02:40:01.141Z",
+    "How to Specify a Custom SMT Nozzle.md": "2026-09-10T02:40:01.141Z",
+    "When a Standard SMT Nozzle Isnt Enough.md": "2026-09-10T02:40:01.142Z"
   },
   "published": {
     "把网站交给 Google 和 Bing —— 小白零基础教程.md": "2026-06-03T10:27:50+08:00",
     "音频与视频示例.md": "2026-06-01T11:12:35.731Z",
-    "这是一篇空白内容的模板文章.md": "2026-05-01T13:12:48+08:00"
+    "这是一篇空白内容的模板文章.md": "2026-05-01T13:12:48+08:00",
+    "Custom JUKI Gripper Nozzle Case Study.md": "2026-09-10T02:30:57.598Z",
+    "How to Specify a Custom SMT Nozzle.md": "2026-09-10T02:30:59.338Z",
+    "When a Standard SMT Nozzle Isnt Enough.md": "2026-09-10T02:30:55.878Z"
   },
   "post_ids": {
     "把网站交给 Google 和 Bing —— 小白零基础教程.md": "2026060310280701",
     "音频与视频示例.md": "2026053111535908",
-    "这是一篇空白内容的模板文章.md": "2026053111535904"
+    "这是一篇空白内容的模板文章.md": "2026053111535904",
+    "Custom JUKI Gripper Nozzle Case Study.md": "2026091010430201",
+    "How to Specify a Custom SMT Nozzle.md": "2026091010430202",
+    "When a Standard SMT Nozzle Isnt Enough.md": "2026091010430203"
   },
   "latest_updates": {
     "把网站交给 Google 和 Bing —— 小白零基础教程.md": {
@@ -78,6 +87,647 @@
       ],
       "source": "commit",
       "commit": "d9164a072e15"
+    },
+    "Custom JUKI Gripper Nozzle Case Study.md": {
+      "items": [
+        "A JUKI custom gripper nozzle project makes more sense when it begins with the PCB and the component rather than with the tooling itself. This case involves a power supply board with magnetic components, capacitors, heat sinks, transformers, and parts that are more structurally complex than conventional chip components.",
+        "Power supply board with magnetic components",
+        "One of the parts in the handling study is a line choke. Its copper windings, exposed leads, and irregular external geometry make automated pickup more challenging than its size suggests.",
+        "Step 1 Understand the Component in Three Dimensions",
+        "Top bottom and side views of a line choke",
+        "A single top-view photo is not enough for custom tooling. The bottom reveals the lead structure, while side views show winding height and available contact zones. Key observations included the uneven coil surface, structural gaps, exposed leads, and limited continuous flat area for vacuum contact.",
+        "Step 2 Compare the Pickup Principle With the Component",
+        "Standard nozzle compared with custom JUKI gripper tooling",
+        "Vacuum pickup depends on a suitable contact area and air seal; a mechanical gripper can control the component from selected side features. For this JUKI application, the selected concept was a pneumatic clamp-type nozzle with opposing jaws.",
+        "Step 3 Build Both Interfaces",
+        "Front view of a custom pneumatic JUKI gripper nozzle",
+        "A custom gripper has two interfaces that must be engineered together:",
+        "Component side: size, weight, lead position, gripping area, center of mass, and sensitive surfaces. Machine side: nozzle interface, actuation, installation geometry, clearance, orientation, and tool-changing requirements. Process: pickup height, feeding method, placement orientation, movement profile, and required repeatability.",
+        "Pneumatic energy controls jaw opening and closing. The engineering work lies in matching jaw motion, contact position, and interface to the actual component and machine.",
+        "Step 4 Check Opening Range and Clearance",
+        "Open JUKI gripper positioned beside the line choke",
+        "The jaw opening must provide enough clearance to approach without touching leads or adjacent structures. The gripping stroke must establish repeatable contact without excessive force. This engineering photograph documents how the physical part and tool were evaluated together.",
+        "Step 5 Run a Simulated Pickup Test",
+        "JUKI custom gripper simulated pickup sequence",
+        "The simulated test checks the core mechanical concept: approach, grip, lift, hold during movement, and release. It supports a specific conclusion—the prototype can mechanically grip, lift, and hold the target component under the demonstrated conditions. It does not by itself prove full production performance.",
+        "What Production-Line Validation Should Check Next",
+        "Pickup repeatability and consistent component entry into the jaws. Holding stability during acceleration, XY movement, and rotation. Reliable component position and orientation recognition. Accurate placement and release. Clearance around feeders, fixtures, nearby components, and machine hardware. Stability of jaws, springs, interfaces, and component surfaces over repeated cycles.",
+        "Keeping prototype feasibility and production validation separate makes the case study more credible and defines what still needs to be verified.",
+        "Why This Case Matters Beyond One Line Choke",
+        "Connectors, coils, transformers, relays, sensors, shielding parts, camera modules, and other odd-form devices can create similar handling questions. The solution may be a customized vacuum tip, soft-contact nozzle, multi-hole design, mechanical gripper, or a different feeding strategy. The correct choice depends on component geometry and the production process.",
+        "What We Need for a Similar JUKI Application",
+        "Clear component photos from the top, bottom, and sides. A dimensional drawing or physical sample. Component length, width, height, and weight. JUKI machine model and placement-head information. Existing nozzle or machine-interface photos and part numbers. A description or video of the current pickup problem. Expected production conditions and validation requirements.",
+        "FAQ About JUKI Custom Gripper Nozzles",
+        "Is this an OEM JUKI nozzle?",
+        "The tooling shown is a customized compatible solution for a JUKI application. It should not be described as an OEM JUKI product unless its origin is specifically verified.",
+        "Can the same gripper be used for other components?",
+        "Possibly, if component dimensions and safe gripping regions are sufficiently similar. Jaw geometry or opening range often needs adjustment for each part family.",
+        "What comes after the simulated pickup test?",
+        "Install the tooling on the intended machine and validate pickup, movement, recognition, placement, release, clearance, and repeated-cycle behavior.",
+        "Have a Similar Component-Handling Challenge?",
+        "Send us the component sample or photos, drawing and dimensions, machine model and head, existing interface details, and a pickup-problem video if available.",
+        "Visit SMTHELP",
+        "Trademark note: JUKI is a trademark of its respective owner. References describe machine compatibility and application context and do not imply OEM manufacture or endorsement unless explicitly stated."
+      ],
+      "targets": [
+        {
+          "text": "A JUKI custom gripper nozzle project makes more sense when it begins with the PCB and the component rather than with the tooling itself. This case involves a power supply board with magnetic components, capacitors, heat sinks, transformers, and parts that are more structurally complex than conventional chip components.",
+          "line": 25
+        },
+        {
+          "text": "![Power supply board with magnetic components](/image/articles/custom-smt-nozzle/power-supply-board-magnetic-component-application.jpg \"A typical power supply board provides the application context for magnetic and odd-shaped components\")",
+          "line": 27
+        },
+        {
+          "text": "One of the parts in the handling study is a line choke. Its copper windings, exposed leads, and irregular external geometry make automated pickup more challenging than its size suggests.",
+          "line": 29
+        },
+        {
+          "text": "## Step 1 Understand the Component in Three Dimensions",
+          "line": 31
+        },
+        {
+          "text": "![Top bottom and side views of a line choke](/image/articles/custom-smt-nozzle/line-choke-magnetic-component-multiple-views.jpg \"Multiple views expose the surfaces, leads, cavities, and potential gripping zones\")",
+          "line": 33
+        },
+        {
+          "text": "A single top-view photo is not enough for custom tooling. The bottom reveals the lead structure, while side views show winding height and available contact zones. Key observations included the uneven coil surface, structural gaps, exposed leads, and limited continuous flat area for vacuum contact.",
+          "line": 35
+        },
+        {
+          "text": "## Step 2 Compare the Pickup Principle With the Component",
+          "line": 37
+        },
+        {
+          "text": "![Standard nozzle compared with custom JUKI gripper tooling](/image/articles/custom-smt-nozzle/standard-smt-nozzle-vs-custom-gripper-nozzle.jpg \"The component is compared with conventional nozzle interfaces and customized clamp-type tooling\")",
+          "line": 39
+        },
+        {
+          "text": "Vacuum pickup depends on a suitable contact area and air seal; a mechanical gripper can control the component from selected side features. For this JUKI application, the selected concept was a pneumatic clamp-type nozzle with opposing jaws.",
+          "line": 41
+        },
+        {
+          "text": "## Step 3 Build Both Interfaces",
+          "line": 43
+        },
+        {
+          "text": "![Front view of a custom pneumatic JUKI gripper nozzle](/image/articles/custom-smt-nozzle/juki-pneumatic-gripper-nozzle-front-view.jpg \"Front view of the custom pneumatic gripper assembly\")",
+          "line": 45
+        },
+        {
+          "text": "A custom gripper has two interfaces that must be engineered together:",
+          "line": 47
+        },
+        {
+          "text": "- **Component side:** size, weight, lead position, gripping area, center of mass, and sensitive surfaces.",
+          "line": 49
+        },
+        {
+          "text": "Pneumatic energy controls jaw opening and closing. The engineering work lies in matching jaw motion, contact position, and interface to the actual component and machine.",
+          "line": 53
+        },
+        {
+          "text": "## Step 4 Check Opening Range and Clearance",
+          "line": 55
+        },
+        {
+          "text": "![Open JUKI gripper positioned beside the line choke](/image/articles/custom-smt-nozzle/juki-gripper-nozzle-open-position-line-choke.jpg \"The open gripper and ruler show the relationship between jaw opening and component size\")",
+          "line": 57
+        },
+        {
+          "text": "The jaw opening must provide enough clearance to approach without touching leads or adjacent structures. The gripping stroke must establish repeatable contact without excessive force. This engineering photograph documents how the physical part and tool were evaluated together.",
+          "line": 59
+        },
+        {
+          "text": "## Step 5 Run a Simulated Pickup Test",
+          "line": 61
+        },
+        {
+          "text": "![JUKI custom gripper simulated pickup sequence](/image/articles/custom-smt-nozzle/custom-juki-gripper-nozzle-pickup-test-sequence.jpg \"The component is shown at rest, gripped, and lifted\")",
+          "line": 63
+        },
+        {
+          "text": "The simulated test checks the core mechanical concept: approach, grip, lift, hold during movement, and release. It supports a specific conclusion—the prototype can mechanically grip, lift, and hold the target component under the demonstrated conditions. It does not by itself prove full production performance.",
+          "line": 65
+        },
+        {
+          "text": "## What Production-Line Validation Should Check Next",
+          "line": 67
+        },
+        {
+          "text": "- Pickup repeatability and consistent component entry into the jaws.",
+          "line": 69
+        },
+        {
+          "text": "Keeping prototype feasibility and production validation separate makes the case study more credible and defines what still needs to be verified.",
+          "line": 76
+        },
+        {
+          "text": "## Why This Case Matters Beyond One Line Choke",
+          "line": 78
+        },
+        {
+          "text": "Connectors, coils, transformers, relays, sensors, shielding parts, camera modules, and other odd-form devices can create similar handling questions. The solution may be a customized vacuum tip, soft-contact nozzle, multi-hole design, mechanical gripper, or a different feeding strategy. The correct choice depends on component geometry and the production process.",
+          "line": 80
+        },
+        {
+          "text": "## What We Need for a Similar JUKI Application",
+          "line": 82
+        },
+        {
+          "text": "1. Clear component photos from the top, bottom, and sides.",
+          "line": 84
+        },
+        {
+          "text": "## FAQ About JUKI Custom Gripper Nozzles",
+          "line": 92
+        },
+        {
+          "text": "### Is this an OEM JUKI nozzle?",
+          "line": 94
+        },
+        {
+          "text": "The tooling shown is a customized compatible solution for a JUKI application. It should not be described as an OEM JUKI product unless its origin is specifically verified.",
+          "line": 96
+        },
+        {
+          "text": "### Can the same gripper be used for other components?",
+          "line": 98
+        },
+        {
+          "text": "Possibly, if component dimensions and safe gripping regions are sufficiently similar. Jaw geometry or opening range often needs adjustment for each part family.",
+          "line": 100
+        },
+        {
+          "text": "### What comes after the simulated pickup test?",
+          "line": 102
+        },
+        {
+          "text": "Install the tooling on the intended machine and validate pickup, movement, recognition, placement, release, clearance, and repeated-cycle behavior.",
+          "line": 104
+        },
+        {
+          "text": "## Have a Similar Component-Handling Challenge?",
+          "line": 106
+        },
+        {
+          "text": "Send us the component sample or photos, drawing and dimensions, machine model and head, existing interface details, and a pickup-problem video if available.",
+          "line": 108
+        },
+        {
+          "text": "[Visit SMTHELP](https://www.smthelp.com)",
+          "line": 110
+        },
+        {
+          "text": "*Trademark note: JUKI is a trademark of its respective owner. References describe machine compatibility and application context and do not imply OEM manufacture or endorsement unless explicitly stated.*",
+          "line": 112
+        }
+      ],
+      "source": "working-tree"
+    },
+    "How to Specify a Custom SMT Nozzle.md": {
+      "items": [
+        "Ordering a standard SMT nozzle is usually simple: identify the machine brand, head type, and nozzle part number. Choosing a custom SMT nozzle manufacturer is different. The customer may know only that a component is difficult to pick, the original tooling is unavailable, or the existing solution is unstable.",
+        "Line choke and custom gripper nozzle",
+        "A reliable project connects three sets of information: the component, the machine, and the process. A useful custom nozzle RFQ answers three questions: What are we handling? What machine must handle it? What exactly is going wrong today?",
+        "1 Start With the Component Package",
+        "Multiple views of a line choke component",
+        "Prepare clear top, bottom, and side photos, a dimensional drawing if available, and a physical sample when practical. Include:",
+        "Length, width, height, and weight. Lead or terminal position. Allowed contact area and surfaces that must not be touched. Required pickup orientation. Fragile, soft, optical, adhesive, or sensitive features.",
+        "This information helps the supplier choose conventional vacuum, a modified vacuum tip, multiple suction points, soft contact, or mechanical gripping.",
+        "2 Provide Exact Machine-Side Information",
+        "Standard SMT interfaces and custom gripper tooling",
+        "“JUKI nozzle” or “Panasonic nozzle” is often not specific enough. Different machines and placement heads may use different interfaces, tool-changing methods, clearances, and operating parameters. Provide:",
+        "Machine brand and exact model. Placement-head model or head type. Existing nozzle part number and interface photos. Available vacuum or pneumatic actuation. Tool-change and clearance requirements.",
+        "An old nozzle or interface sample can reduce ambiguity and accelerate development.",
+        "3 Explain the Production Problem in Observable Terms",
+        "Avoid saying only “the nozzle does not work.” Describe the failure mode:",
+        "The component cannot be picked. It drops during pickup or movement. It rotates or tilts in the nozzle. Vacuum is unstable or cannot form a seal. The nozzle touches or damages leads or sensitive surfaces. Feeder or tray presentation is inconsistent. Pickup works, but placement or release is unreliable.",
+        "A short video of the failed pickup often communicates the sequence, orientation, presentation, and movement better than a long explanation.",
+        "4 Expect Measurement and Engineering Review",
+        "Dimensional measurement for custom SMT nozzle design",
+        "Custom tooling should not be based on appearance alone. Critical dimensions, clearances, contact regions, and machine-side features need to be measured and documented. If no drawing exists, a project can often begin with a physical component sample, old nozzle, interface photographs, and machine information.",
+        "5 Select the Simplest Suitable Pickup Method",
+        "Standard nozzle: preferred when a standard tip meets the requirement. Customized vacuum tip: useful when a suction surface exists but requires another profile or size. Multi-hole vacuum design: distributes suction over a larger or unusual area. Soft-contact tip: may protect delicate surfaces or improve sealing. Mechanical gripper: useful when side gripping is possible but stable vacuum pickup is difficult.",
+        "Pneumatic clamp-type nozzle for a JUKI application",
+        "6 Require a Prototype and Validation Path",
+        "Design → Prototype → Bench Pickup Test → Machine Test → Optimization → Repeated-Cycle Validation → Production Release",
+        "Custom gripper pickup test sequence",
+        "A bench test can show that the tool physically engages and holds the component. Machine validation is still required for repeatability, placement accuracy, cycle time, vision, release, collision clearance, and long-term behavior.",
+        "7 Define Success Before Final Production",
+        "“It works” is too vague. Agree on practical acceptance criteria: successful pickup and release, repeat cycles, orientation stability, no visible damage, machine compatibility, placement repeatability, and acceptable cycle time. High-speed or high-volume applications may require more extensive repeated-cycle testing.",
+        "8 Evaluate the Supplier Beyond Unit Price",
+        "A poorly designed nozzle can create line stops, repeated adjustment, damaged components, and lost engineering time. Evaluate:",
+        "Engineering understanding of the component and machine interface. Prototype and pre-production test capability. Speed and control of design revisions. Repeatability of future production batches. Drawing, version, and part-identification control. Response time and support for urgent production issues.",
+        "Custom SMT Nozzle RFQ Checklist",
+        "FAQ About Buying Custom SMT Nozzles",
+        "Can a nozzle be reverse engineered without a drawing?",
+        "Often yes, provided a physical nozzle or sufficiently complete interface data is available. Reverse engineering should include dimensional measurement and functional review rather than copying only the external appearance.",
+        "Should I send a drawing or a sample first?",
+        "Send both if possible. A drawing provides nominal dimensions, while a sample reveals real surfaces, tolerances, lead condition, and contact constraints.",
+        "Should purchasing or engineering lead the project?",
+        "Both are useful. Engineering should define process and validation requirements; purchasing should manage terms, quantity, lead time, and supply continuity.",
+        "Ready to Send a Custom Nozzle RFQ?",
+        "Prepare the component photos, drawing or sample, machine and head information, existing interface details, current pickup issue, target quantity, and validation requirement. Southern Machinery can evaluate a standard replacement, customized vacuum nozzle, or gripper solution.",
+        "Visit SMTHELP",
+        "Trademark note: JUKI is a trademark of its respective owner. References describe machine compatibility and application context and do not imply OEM manufacture or endorsement unless explicitly stated."
+      ],
+      "targets": [
+        {
+          "text": "Ordering a standard SMT nozzle is usually simple: identify the machine brand, head type, and nozzle part number. Choosing a custom SMT nozzle manufacturer is different. The customer may know only that a component is difficult to pick, the original tooling is unavailable, or the existing solution is unstable.",
+          "line": 26
+        },
+        {
+          "text": "![Line choke and custom gripper nozzle](/image/articles/custom-smt-nozzle/line-choke-and-custom-gripper-nozzle.jpg \"A custom nozzle project connects the physical component with the machine-side tooling and process requirements\")",
+          "line": 28
+        },
+        {
+          "text": "A reliable project connects three sets of information: the component, the machine, and the process. A useful custom nozzle RFQ answers three questions: What are we handling? What machine must handle it? What exactly is going wrong today?",
+          "line": 30
+        },
+        {
+          "text": "## 1 Start With the Component Package",
+          "line": 32
+        },
+        {
+          "text": "![Multiple views of a line choke component](/image/articles/custom-smt-nozzle/line-choke-magnetic-component-multiple-views.jpg \"Multiple views expose surfaces, leads, cavities, and potential gripping zones\")",
+          "line": 34
+        },
+        {
+          "text": "Prepare clear top, bottom, and side photos, a dimensional drawing if available, and a physical sample when practical. Include:",
+          "line": 36
+        },
+        {
+          "text": "- Length, width, height, and weight.",
+          "line": 38
+        },
+        {
+          "text": "This information helps the supplier choose conventional vacuum, a modified vacuum tip, multiple suction points, soft contact, or mechanical gripping.",
+          "line": 44
+        },
+        {
+          "text": "## 2 Provide Exact Machine-Side Information",
+          "line": 46
+        },
+        {
+          "text": "![Standard SMT interfaces and custom gripper tooling](/image/articles/custom-smt-nozzle/standard-smt-nozzle-vs-custom-gripper-nozzle.jpg \"Standard interfaces and custom tooling must be evaluated together\")",
+          "line": 48
+        },
+        {
+          "text": "“JUKI nozzle” or “Panasonic nozzle” is often not specific enough. Different machines and placement heads may use different interfaces, tool-changing methods, clearances, and operating parameters. Provide:",
+          "line": 50
+        },
+        {
+          "text": "- Machine brand and exact model.",
+          "line": 52
+        },
+        {
+          "text": "An old nozzle or interface sample can reduce ambiguity and accelerate development.",
+          "line": 58
+        },
+        {
+          "text": "## 3 Explain the Production Problem in Observable Terms",
+          "line": 60
+        },
+        {
+          "text": "Avoid saying only “the nozzle does not work.” Describe the failure mode:",
+          "line": 62
+        },
+        {
+          "text": "- The component cannot be picked.",
+          "line": 64
+        },
+        {
+          "text": "A short video of the failed pickup often communicates the sequence, orientation, presentation, and movement better than a long explanation.",
+          "line": 72
+        },
+        {
+          "text": "## 4 Expect Measurement and Engineering Review",
+          "line": 74
+        },
+        {
+          "text": "![Dimensional measurement for custom SMT nozzle design](/image/articles/custom-smt-nozzle/custom-smt-nozzle-dimensional-measurement.jpg \"Direct measurement supports new tooling and reverse-engineering projects\")",
+          "line": 76
+        },
+        {
+          "text": "Custom tooling should not be based on appearance alone. Critical dimensions, clearances, contact regions, and machine-side features need to be measured and documented. If no drawing exists, a project can often begin with a physical component sample, old nozzle, interface photographs, and machine information.",
+          "line": 78
+        },
+        {
+          "text": "## 5 Select the Simplest Suitable Pickup Method",
+          "line": 80
+        },
+        {
+          "text": "- **Standard nozzle:** preferred when a standard tip meets the requirement.",
+          "line": 82
+        },
+        {
+          "text": "![Pneumatic clamp-type nozzle for a JUKI application](/image/articles/custom-smt-nozzle/juki-pneumatic-gripper-nozzle-front-view.jpg \"Example of a custom pneumatic gripper nozzle\")",
+          "line": 88
+        },
+        {
+          "text": "## 6 Require a Prototype and Validation Path",
+          "line": 90
+        },
+        {
+          "text": "**Design → Prototype → Bench Pickup Test → Machine Test → Optimization → Repeated-Cycle Validation → Production Release**",
+          "line": 92
+        },
+        {
+          "text": "![Custom gripper pickup test sequence](/image/articles/custom-smt-nozzle/custom-juki-gripper-nozzle-pickup-test-sequence.jpg \"Functional evidence from a simulated pickup test\")",
+          "line": 94
+        },
+        {
+          "text": "A bench test can show that the tool physically engages and holds the component. Machine validation is still required for repeatability, placement accuracy, cycle time, vision, release, collision clearance, and long-term behavior.",
+          "line": 96
+        },
+        {
+          "text": "## 7 Define Success Before Final Production",
+          "line": 98
+        },
+        {
+          "text": "“It works” is too vague. Agree on practical acceptance criteria: successful pickup and release, repeat cycles, orientation stability, no visible damage, machine compatibility, placement repeatability, and acceptable cycle time. High-speed or high-volume applications may require more extensive repeated-cycle testing.",
+          "line": 100
+        },
+        {
+          "text": "## 8 Evaluate the Supplier Beyond Unit Price",
+          "line": 102
+        },
+        {
+          "text": "A poorly designed nozzle can create line stops, repeated adjustment, damaged components, and lost engineering time. Evaluate:",
+          "line": 104
+        },
+        {
+          "text": "- Engineering understanding of the component and machine interface.",
+          "line": 106
+        },
+        {
+          "text": "## Custom SMT Nozzle RFQ Checklist",
+          "line": 113
+        },
+        {
+          "text": "## FAQ About Buying Custom SMT Nozzles",
+          "line": 123
+        },
+        {
+          "text": "### Can a nozzle be reverse engineered without a drawing?",
+          "line": 125
+        },
+        {
+          "text": "Often yes, provided a physical nozzle or sufficiently complete interface data is available. Reverse engineering should include dimensional measurement and functional review rather than copying only the external appearance.",
+          "line": 127
+        },
+        {
+          "text": "### Should I send a drawing or a sample first?",
+          "line": 129
+        },
+        {
+          "text": "Send both if possible. A drawing provides nominal dimensions, while a sample reveals real surfaces, tolerances, lead condition, and contact constraints.",
+          "line": 131
+        },
+        {
+          "text": "### Should purchasing or engineering lead the project?",
+          "line": 133
+        },
+        {
+          "text": "Both are useful. Engineering should define process and validation requirements; purchasing should manage terms, quantity, lead time, and supply continuity.",
+          "line": 135
+        },
+        {
+          "text": "## Ready to Send a Custom Nozzle RFQ?",
+          "line": 137
+        },
+        {
+          "text": "Prepare the component photos, drawing or sample, machine and head information, existing interface details, current pickup issue, target quantity, and validation requirement. Southern Machinery can evaluate a standard replacement, customized vacuum nozzle, or gripper solution.",
+          "line": 139
+        },
+        {
+          "text": "[Visit SMTHELP](https://www.smthelp.com)",
+          "line": 141
+        },
+        {
+          "text": "*Trademark note: JUKI is a trademark of its respective owner. References describe machine compatibility and application context and do not imply OEM manufacture or endorsement unless explicitly stated.*",
+          "line": 143
+        }
+      ],
+      "source": "working-tree"
+    },
+    "When a Standard SMT Nozzle Isnt Enough.md": {
+      "items": [
+        "Most SMT placement tasks are straightforward when the component has a flat, accessible surface and the correct standard nozzle is available. The nozzle contacts the component, vacuum is applied, and the machine can pick, move, recognize, rotate, and place the part.",
+        "Standard vacuum nozzle, line choke and customized clamp-type nozzle",
+        "The situation changes when the component is large, heavy, uneven, fragile, or simply not designed with a stable vacuum pickup area. Coils, magnetic components, connectors, relays, transformers, shielding parts, sensors, and other odd-shaped components may require a different engineering approach.",
+        "The right question is not always “Which standard nozzle should we use?” Sometimes it is “Is vacuum pickup still the right method for this component?”",
+        "Why Component Geometry Matters",
+        "The nozzle is the physical interface between the placement machine and the component. For vacuum pickup to remain stable, the contact area, air seal, component balance, acceleration, and movement all matter. A nozzle that can lift a component once on a bench is not automatically a reliable production solution.",
+        "Multiple views of an irregular line choke component",
+        "In this example, the component is a line choke used in a power-electronics application. Several handling challenges become clear:",
+        "The upper surface is interrupted by wound copper coils and structural gaps. The leads project from the body and must be protected from unintended contact. The component offers limited continuous surface area for a conventional vacuum seal. The best pickup or gripping position must control the component without damaging sensitive structures.",
+        "Why Uneven Surfaces Can Make Vacuum Pickup Difficult",
+        "A vacuum nozzle needs to create and maintain a pressure difference between the nozzle and the contact surface. If that surface is interrupted by gaps, contours, grooves, or porous structures, air leakage can reduce the available holding force.",
+        "A component may still be lifted during a static trial, yet become unstable when the machine accelerates, changes direction, rotates the component, or moves toward the placement position. Pickup reliability therefore needs to be evaluated dynamically, not only by checking whether the part can be lifted once.",
+        "Before Customizing Diagnose the Whole Pickup System",
+        "A difficult pickup does not automatically mean the nozzle is the problem. Before designing custom tooling, check the complete handling chain:",
+        "Is the component presented consistently by the feeder or tray? Is pickup height correct and repeatable? Is the vacuum level sufficient and stable? Is the nozzle centered on a mechanically stable area? Does the component tilt, rotate, or move before pickup? Are vision settings, orientation, and placement parameters correct?",
+        "If these process variables are controlled and the geometry still provides no reliable suction surface, a customized pickup method becomes more relevant.",
+        "When a Mechanical Gripper Nozzle Makes Sense",
+        "A clamp-type or gripper nozzle changes the pickup principle. Instead of depending only on suction from the top surface, mechanical jaws contact selected areas on the sides or body of the component. This shifts the engineering task from finding a suction area to finding a safe and repeatable gripping area.",
+        "JUKI gripper nozzle open beside a line choke",
+        "A successful gripper design should establish safe jaw contact, sufficient approach clearance, suitable gripping travel and force, component balance during motion, and compatibility with the target machine interface.",
+        "Start With Measurement Not Assumptions",
+        "Dimensional measurement of a custom SMT nozzle",
+        "Photographs are useful, but dimensions are essential. The design package should include component length, width, height, weight, available pickup or gripping area, lead position, orientation, and the machine-side interface. A physical component sample or old nozzle can reveal details that are easy to miss in a drawing.",
+        "Component → Measurement → Pickup Analysis → Nozzle Design → Prototype → Pickup Test → Machine Validation",
+        "What a Simulated Pickup Test Can Prove",
+        "Custom JUKI gripper nozzle pickup test sequence",
+        "A simulated bench test can verify basic mechanical feasibility: the jaws can approach the component, close around the intended area, lift the part, maintain control during movement, and release it.",
+        "However, a bench demonstration is not full production validation. Machine-level testing is still required to evaluate repeatability, placement accuracy, cycle time, collision clearance, component recognition, long-term wear, and repeated-cycle performance.",
+        "Standard Nozzle Custom Vacuum Tip or Gripper",
+        "A standard nozzle remains the first choice when it provides reliable pickup. A customized vacuum tip may be appropriate when a usable suction area exists but the standard tip geometry is wrong. Multi-hole or soft-contact designs may help in other situations. Mechanical gripping becomes attractive when a stable vacuum surface is limited but safe side-gripping features are available.",
+        "The objective is to use the simplest tooling that achieves stable, repeatable, production-compatible handling.",
+        "FAQ About Custom SMT Nozzles",
+        "Does every coil or transformer need a gripper nozzle?",
+        "No. Many magnetic components can be handled with vacuum nozzles if they have an appropriate pickup surface. Consider a gripper only after evaluating the actual geometry, weight, process, and machine interface.",
+        "Can a custom nozzle be designed from a component sample?",
+        "Yes. A physical sample can identify candidate pickup or gripping zones. Machine information is still required so the custom tooling can be integrated correctly.",
+        "Is a successful manual pickup test enough for production?",
+        "No. It demonstrates mechanical feasibility. Production approval should follow machine-level validation and repeated-cycle testing under the intended operating conditions.",
+        "Have a Component That Is Difficult to Pick?",
+        "Send us component photos or a physical sample, dimensions and weight, machine brand and model, existing nozzle details, and a description or video of the pickup problem. We can evaluate whether a standard nozzle, customized vacuum nozzle, or mechanical gripper is more suitable.",
+        "Visit SMTHELP",
+        "Trademark note: JUKI is a trademark of its respective owner. References describe machine compatibility and application context and do not imply OEM manufacture or endorsement unless explicitly stated."
+      ],
+      "targets": [
+        {
+          "text": "Most SMT placement tasks are straightforward when the component has a flat, accessible surface and the correct standard nozzle is available. The nozzle contacts the component, vacuum is applied, and the machine can pick, move, recognize, rotate, and place the part.",
+          "line": 25
+        },
+        {
+          "text": "![Standard vacuum nozzle, line choke and customized clamp-type nozzle](/image/articles/custom-smt-nozzle/standard-smt-nozzle-vs-custom-gripper-nozzle.jpg \"Standard vacuum nozzle/interface, the target magnetic component, and a customized clamp-type nozzle shown together\")",
+          "line": 27
+        },
+        {
+          "text": "The situation changes when the component is large, heavy, uneven, fragile, or simply not designed with a stable vacuum pickup area. Coils, magnetic components, connectors, relays, transformers, shielding parts, sensors, and other odd-shaped components may require a different engineering approach.",
+          "line": 29
+        },
+        {
+          "text": "The right question is not always “Which standard nozzle should we use?” Sometimes it is “Is vacuum pickup still the right method for this component?”",
+          "line": 31
+        },
+        {
+          "text": "## Why Component Geometry Matters",
+          "line": 33
+        },
+        {
+          "text": "The nozzle is the physical interface between the placement machine and the component. For vacuum pickup to remain stable, the contact area, air seal, component balance, acceleration, and movement all matter. A nozzle that can lift a component once on a bench is not automatically a reliable production solution.",
+          "line": 35
+        },
+        {
+          "text": "![Multiple views of an irregular line choke component](/image/articles/custom-smt-nozzle/line-choke-magnetic-component-multiple-views.jpg \"Multiple views reveal the copper windings, exposed leads, uneven geometry, and limited flat contact areas\")",
+          "line": 37
+        },
+        {
+          "text": "In this example, the component is a line choke used in a power-electronics application. Several handling challenges become clear:",
+          "line": 39
+        },
+        {
+          "text": "- The upper surface is interrupted by wound copper coils and structural gaps.",
+          "line": 41
+        },
+        {
+          "text": "## Why Uneven Surfaces Can Make Vacuum Pickup Difficult",
+          "line": 46
+        },
+        {
+          "text": "A vacuum nozzle needs to create and maintain a pressure difference between the nozzle and the contact surface. If that surface is interrupted by gaps, contours, grooves, or porous structures, air leakage can reduce the available holding force.",
+          "line": 48
+        },
+        {
+          "text": "A component may still be lifted during a static trial, yet become unstable when the machine accelerates, changes direction, rotates the component, or moves toward the placement position. Pickup reliability therefore needs to be evaluated dynamically, not only by checking whether the part can be lifted once.",
+          "line": 50
+        },
+        {
+          "text": "## Before Customizing Diagnose the Whole Pickup System",
+          "line": 52
+        },
+        {
+          "text": "A difficult pickup does not automatically mean the nozzle is the problem. Before designing custom tooling, check the complete handling chain:",
+          "line": 54
+        },
+        {
+          "text": "- Is the component presented consistently by the feeder or tray?",
+          "line": 56
+        },
+        {
+          "text": "If these process variables are controlled and the geometry still provides no reliable suction surface, a customized pickup method becomes more relevant.",
+          "line": 63
+        },
+        {
+          "text": "## When a Mechanical Gripper Nozzle Makes Sense",
+          "line": 65
+        },
+        {
+          "text": "A clamp-type or gripper nozzle changes the pickup principle. Instead of depending only on suction from the top surface, mechanical jaws contact selected areas on the sides or body of the component. This shifts the engineering task from finding a suction area to finding a safe and repeatable gripping area.",
+          "line": 67
+        },
+        {
+          "text": "![JUKI gripper nozzle open beside a line choke](/image/articles/custom-smt-nozzle/juki-gripper-nozzle-open-position-line-choke.jpg \"The customized gripper is shown open next to the component, providing a reference for jaw clearance and component size\")",
+          "line": 69
+        },
+        {
+          "text": "A successful gripper design should establish safe jaw contact, sufficient approach clearance, suitable gripping travel and force, component balance during motion, and compatibility with the target machine interface.",
+          "line": 71
+        },
+        {
+          "text": "## Start With Measurement Not Assumptions",
+          "line": 73
+        },
+        {
+          "text": "![Dimensional measurement of a custom SMT nozzle](/image/articles/custom-smt-nozzle/custom-smt-nozzle-dimensional-measurement.jpg \"Physical measurement translates the component and machine interface into usable design dimensions\")",
+          "line": 75
+        },
+        {
+          "text": "Photographs are useful, but dimensions are essential. The design package should include component length, width, height, weight, available pickup or gripping area, lead position, orientation, and the machine-side interface. A physical component sample or old nozzle can reveal details that are easy to miss in a drawing.",
+          "line": 77
+        },
+        {
+          "text": "**Component → Measurement → Pickup Analysis → Nozzle Design → Prototype → Pickup Test → Machine Validation**",
+          "line": 79
+        },
+        {
+          "text": "## What a Simulated Pickup Test Can Prove",
+          "line": 81
+        },
+        {
+          "text": "![Custom JUKI gripper nozzle pickup test sequence](/image/articles/custom-smt-nozzle/custom-juki-gripper-nozzle-pickup-test-sequence.jpg \"Real frames show the component before pickup, during gripping, and after lifting\")",
+          "line": 83
+        },
+        {
+          "text": "A simulated bench test can verify basic mechanical feasibility: the jaws can approach the component, close around the intended area, lift the part, maintain control during movement, and release it.",
+          "line": 85
+        },
+        {
+          "text": "However, a bench demonstration is not full production validation. Machine-level testing is still required to evaluate repeatability, placement accuracy, cycle time, collision clearance, component recognition, long-term wear, and repeated-cycle performance.",
+          "line": 87
+        },
+        {
+          "text": "## Standard Nozzle Custom Vacuum Tip or Gripper",
+          "line": 89
+        },
+        {
+          "text": "A standard nozzle remains the first choice when it provides reliable pickup. A customized vacuum tip may be appropriate when a usable suction area exists but the standard tip geometry is wrong. Multi-hole or soft-contact designs may help in other situations. Mechanical gripping becomes attractive when a stable vacuum surface is limited but safe side-gripping features are available.",
+          "line": 91
+        },
+        {
+          "text": "The objective is to use the simplest tooling that achieves stable, repeatable, production-compatible handling.",
+          "line": 93
+        },
+        {
+          "text": "## FAQ About Custom SMT Nozzles",
+          "line": 95
+        },
+        {
+          "text": "### Does every coil or transformer need a gripper nozzle?",
+          "line": 97
+        },
+        {
+          "text": "No. Many magnetic components can be handled with vacuum nozzles if they have an appropriate pickup surface. Consider a gripper only after evaluating the actual geometry, weight, process, and machine interface.",
+          "line": 99
+        },
+        {
+          "text": "### Can a custom nozzle be designed from a component sample?",
+          "line": 101
+        },
+        {
+          "text": "Yes. A physical sample can identify candidate pickup or gripping zones. Machine information is still required so the custom tooling can be integrated correctly.",
+          "line": 103
+        },
+        {
+          "text": "### Is a successful manual pickup test enough for production?",
+          "line": 105
+        },
+        {
+          "text": "No. It demonstrates mechanical feasibility. Production approval should follow machine-level validation and repeated-cycle testing under the intended operating conditions.",
+          "line": 107
+        },
+        {
+          "text": "## Have a Component That Is Difficult to Pick?",
+          "line": 109
+        },
+        {
+          "text": "Send us component photos or a physical sample, dimensions and weight, machine brand and model, existing nozzle details, and a description or video of the pickup problem. We can evaluate whether a standard nozzle, customized vacuum nozzle, or mechanical gripper is more suitable.",
+          "line": 111
+        },
+        {
+          "text": "[Visit SMTHELP](https://www.smthelp.com)",
+          "line": 113
+        },
+        {
+          "text": "*Trademark note: JUKI is a trademark of its respective owner. References describe machine compatibility and application context and do not imply OEM manufacture or endorsement unless explicitly stated.*",
+          "line": 115
+        }
+      ],
+      "source": "working-tree"
     }
   }
 }

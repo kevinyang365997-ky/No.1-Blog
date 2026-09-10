@@ -26,6 +26,8 @@ function normalizePostFrontmatter(data = {}) {
         title: data.title,
         description: data.description,
         summary: data.summary,
+        seo_title: data.seo_title,
+        seo_meta_description: data.seo_meta_description,
         date: data.date,
         updated: firstDefined(data.updated, data.date_updated),
         cover: data.cover || '',
